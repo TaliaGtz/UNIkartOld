@@ -20,7 +20,9 @@ a{
 }
 
 p{
-    color: aqua;
+    color: darkred;
+    font-size: 250px;
+    font-weight: bolder;
 }
 /*barra de navegación 2.0*/
 .header{
