@@ -32,12 +32,9 @@ function toggle(num){
     }
 }
 
-$(document).load($(window).bind("resize", checkPosition));
-
-function checkPosition()
-{
+$(window).on("load",function checkPosition(){
     if($(window).width() > 843)
     {
         document.getElementById("navList").removeAttribute("style");
     }
-}
+});

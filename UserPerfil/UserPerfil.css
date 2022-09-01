@@ -61,7 +61,6 @@ a{
 .nav-link{
     color: #f0f8ff;
 }
-
 nav ul li:hover{
     background-color: #428347;
 }
@@ -84,7 +83,6 @@ nav ul li:hover{
     transform: rotate(180deg);
     transition: all 500ms ease;
 }
-
 .resetBars{
     transform: rotate(0deg);
     transition: all 500ms ease;
