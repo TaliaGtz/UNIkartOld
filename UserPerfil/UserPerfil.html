@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="UserPerfil.css">
     <script src="https://kit.fontawesome.com/29079834be.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/7e5b2d153f.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="UK.png">
 </head>
 <body>
     <header class="header">
@@ -32,12 +33,23 @@
 
     <section class="grid">
         <div class="square">
-            <img src="User.png" height="70" width="70" class="user">
-            <p>Hola bola</p>
-            <br>
-            <p>Aló</p>
-            <br>
-            <p>sgfsdf</p>
+            <div class="user">
+                <img src="User.png" height="100" width="100" id="image" alt="Imagen" class="file">
+            </div>    
+            <form runat="server" action="" class="image">
+                <div>
+                    <label for="archivo">Cambiar imagen</label>
+                    <input type="file" id="userPic" name="archivo"/>  <!--disabled-->
+                </div>
+            </form>
+             
+            <ul class="userInfo">
+                <br>
+                <li>Nombre</li>
+                <li>Correo</li>
+                <li>Celular</li>
+                <li>Fecha de nacimiento</li>
+            </ul>
         </div>
 
         <div class="other">
