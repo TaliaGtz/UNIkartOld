@@ -246,17 +246,25 @@ h1{
     grid-column: 1/14;
     overflow: hidden;
     padding: 20px;
+    display: flex;
+    align-items: flex-start;
 }
 
 .productImg{
     max-width: 300px;
     height: auto;
-    align-self: center;
+}
+
+#productName{
+    font-size: 3vh;
+    flex: 1;
 }
 
 .description{
+    /*­­­­grid-row: 2/6;
+    grid-column: 8/14;*/
     color:#2c1507;
-    /*background-color: rebeccapurple;*/
+    padding: 5px;
 }
 
 .article{
