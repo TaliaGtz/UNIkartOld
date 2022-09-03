@@ -1,8 +1,11 @@
+//variables
 const navToggle = document.querySelector(".nav-toggle");
 const navMenu = document.querySelector(".nav-menu");
 var num = 2;
 var i = 0;
-var j = 0;
+var j = 0;   
+
+
 navToggle.addEventListener("click", ()=>{
     //navMenu.classList.toggle("nav-menu_visible");
     
@@ -42,35 +45,36 @@ $(window).on("load",function checkPosition(){
 });
 
 ///////////////////////////////////////
-{
-    var i = 0;
-    var iCat = 1;
-    var valCat;
-    var panel;
-    var btn;
-    var msg;
-    var msg2;
-    var msg3;
-    var text2;
-    var date2;
-    var html2 = document.querySelector("#option");
-    var selected;
-    var selectedDate;
-    var selected2;
-    var selectedRB;
-    var a = [];
-    var pags = 1;
-    var actualPage = 0;
-    var date;
-    var day;
-    var month;
-    var year;
-    var dayAux;
-    var monthAux;
-    var yearAux;
-    var div;
-    var divCB
-}
+
+//variables
+var i = 0;
+var iCat = 1;
+var valCat;
+var panel;
+var btn;
+var msg;
+var msg2;
+var msg3;
+var text2;
+var date2;
+var html2 = document.querySelector("#option");
+var selected;
+var selectedDate;
+var selected2;
+var selectedRB;
+var a = [];
+var pags = 1;
+var actualPage = 0;
+var date;
+var day;
+var month;
+var year;
+var dayAux;
+var monthAux;
+var yearAux;
+var div;
+var divCB
+
 
 const debounce = (fn) => {
     let frame;

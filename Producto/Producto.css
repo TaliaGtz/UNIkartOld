@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Ubuntu&display=swap');
 /*Alt + Z*/
 
+/*Globals*/
 *{
     margin: 0px;
     padding: 0px;
@@ -286,7 +287,6 @@ nav ul li:hover{
 }
 
 /* sección de comentarios */
-
 .comments{
     grid-row: 7/12;
     grid-column: 2/-2;
@@ -454,8 +454,8 @@ nav ul li:hover{
     margin: 5px;
 }
 
-/* fin de sección de comentarios */
 
+/*Footer*/
 .other{
     grid-row: 12/-1;
     grid-column: 1/-1;
