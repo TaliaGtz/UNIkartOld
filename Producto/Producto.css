@@ -250,6 +250,20 @@ nav ul li:hover{
     align-items: flex-start;
 }
 
+#editImg{
+    width: 25px;
+    height: 25px;
+    float: right;
+    margin: -4%;
+}
+
+#deleteImg{
+    width: 25px;
+    height: 25px;
+    float: right;
+    margin: -4%;
+}
+
 .productImg{
     max-width: 300px;
     height: auto;
@@ -334,13 +348,6 @@ nav ul li:hover{
 .button:hover{
     background-color: #5a2fa057; 
 }
-/*
-img{
-    width: 25px;
-    height: 25px;
-    float: right;
-    margin: -4%;
-}*/
 
 .editBtn{
     background-color: lightblue; 
@@ -400,9 +407,6 @@ img{
     margin-top: 25px;
 }
 
-
-
-
 #buttons {      /* estilo de botones */
     position: absolute;
     right: 0;
@@ -441,8 +445,16 @@ img{
     padding: 12px 15px 12px;
 }
 
+.searchList ul{
+    list-style: none;
+    display: none;
+}
 
-/* sección de comentarios */
+.searchList ul li{
+    margin: 5px;
+}
+
+/* fin de sección de comentarios */
 
 .other{
     grid-row: 12/-1;

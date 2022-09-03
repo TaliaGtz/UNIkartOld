@@ -42,34 +42,35 @@ $(window).on("load",function checkPosition(){
 });
 
 ///////////////////////////////////////
-
-var i = 0;
-var iCat = 1;
-var valCat;
-var panel;
-var btn;
-var msg;
-var msg2;
-var msg3;
-var text2;
-var date2;
-var html2 = document.querySelector("#option");
-var selected;
-var selectedDate;
-var selected2;
-var selectedRB;
-var a = [];
-var pags = 1;
-var actualPage = 0;
-var date;
-var day;
-var month;
-var year;
-var dayAux;
-var monthAux;
-var yearAux;
-var div;
-var divCB
+{
+    var i = 0;
+    var iCat = 1;
+    var valCat;
+    var panel;
+    var btn;
+    var msg;
+    var msg2;
+    var msg3;
+    var text2;
+    var date2;
+    var html2 = document.querySelector("#option");
+    var selected;
+    var selectedDate;
+    var selected2;
+    var selectedRB;
+    var a = [];
+    var pags = 1;
+    var actualPage = 0;
+    var date;
+    var day;
+    var month;
+    var year;
+    var dayAux;
+    var monthAux;
+    var yearAux;
+    var div;
+    var divCB
+}
 
 const debounce = (fn) => {
     let frame;
@@ -118,7 +119,7 @@ $("#publicar").click(function(){
 
         displayPost(text.innerHTML, date.value, selCategory, pags);
         savePost(text.innerHTML);
-        displayDate(i, date.value, msg2);
+        //displayDate(i, date.value, msg2);
         
         document.getElementById("commentBox").innerHTML = "";     //Limpia el commentBox
         document.getElementById("datepkd").value = "2022-01-01";     //Limpia el DateTimePicker
@@ -176,21 +177,21 @@ function displayPost(msgText, date, category, pag) {
     btn.setAttribute('class', 'editBtn');
     btn.setAttribute('onclick', `editar(${i})`);
     btn.setAttribute('id', 'idEditBtn' + i);
-    btn.innerHTML = "<img src='editar.png' id='editImg'/>";
+    btn.innerHTML = "<img src='../ExtraDocs/editar.png' id='editImg'/>";
     panel.appendChild(btn);
 
     var btn2 = document.createElement('button');
     btn2.setAttribute('class', 'deleteBtn');
     btn2.setAttribute('onclick', 'eliminar()');     //`eliminar(${i})`
     btn2.setAttribute('id', i);
-    btn2.innerHTML = "<img src='delete.png' id='deleteImg'/>";
+    btn2.innerHTML = "<img src='../ExtraDocs/delete.png' id='deleteImg'/>";
     panel.appendChild(btn2);
     
 }
 
 function editar(IDedit){
 
-    document.getElementById("idEditBtn" + IDedit).innerHTML = "<img src='listo.png' id='doneImg'/>";
+    document.getElementById("idEditBtn" + IDedit).innerHTML = "<img src='../ExtraDocs/listo.png' id='doneImg'/>";
 
     document.getElementById("dateID" + IDedit).disabled = false;
 
@@ -207,81 +208,9 @@ function editar(IDedit){
     divCB.appendChild(div);
 
     text2 = document.getElementById("commentBox2");       //Toma el texto del commentBox
-    //date2 = document.querySelector('input[type="date"]');   //Toma el texto del DateTimePicker
-    //console.log(date2.value);
 
     document.getElementById("idEditBtn" + IDedit).removeAttribute('onclick');
     document.getElementById("idEditBtn" + IDedit).setAttribute('onclick', `listo(${IDedit})`);
-
-    /*
-    $("img[id=editImg]").click(function() {
-        $("button").click(function() {
-            btn.innerHTML = "<img src='listo.png' id='doneImg'/>";
-            editBtn = $(this).attr("id");
-            //console.log("id:" + " " + editBtn);
-            document.getElementById("dateID" + editBtn).disabled = false;
-            //console.log("dateID" + editBtn);
-            
-            //console.log("id:" + " " + edit);
-            
-           
-        
-            //console.log(bool);
-
-            //panel.removeChild(msg);
-
-            //console.log("id:" + " " + editBtn);
-            document.getElementById("postID" + editBtn).hidden = false;
-            
-
-            var div = document.createElement('div'); 
-            div.setAttribute('id', 'commentBox2');
-            div.setAttribute('name', 'commentBoxWaste');
-            div.setAttribute('contenteditable', 'true');
-            div.setAttribute('dir', 'auto');
-            div.setAttribute('class', 'commentBox2');
-            div.setAttribute('placeholder', 'Edita tu comentario...');      //msg.textContent
-            panel.appendChild(div);
-
-            text2 = document.getElementById("commentBox2");       //Toma el texto del commentBox
-            //date2 = document.querySelector('input[type="date"]');   //Toma el texto del DateTimePicker
-            //console.log(date2.value);
-
-            bool = true;
-        
-
-            if(bool == true){
-                
-                //console.log("yawe");
-                $("img[id=doneImg]").click(function() {
-                    $("button").click(function() {
-                        //console.log("good soup");
-                        
-                        msg.textContent = text2.innerHTML;
-                        //console.log(msg.textContent);
-
-                        var artDate = document.getElementById("dateID" + editBtn);
-                        //console.log(artDate.value);
-                        displayDateMod(editBtn, artDate.value);    //ID, fecha
-
-                        panel.removeChild(div);
-
-                        $("div").click(function() {
-                            
-                            $("#commentBox2").remove();       //Quita todo el código que tenga que ver con la lista
-                            btn.innerHTML = "<img src='editar.png' id='editImg'/>";
-                            document.getElementById("dateID" + editBtn).disabled = true;
-                            //console.log("dateID" + editBtn);
-                            
-                        });
-                    });
-                });
-                bool = false;
-            }
-            
-        });
-    });   
-    */
 }
 
 function listo(IDedit){
@@ -291,13 +220,11 @@ function listo(IDedit){
         document.getElementById("postID" + IDedit).textContent = text2.innerHTML;
 
         var artDate = document.getElementById("dateID" + IDedit);
-        //console.log(artDate.value);
-        //displayDateMod(IDedit, artDate.value);    //ID, fecha
         divCB.removeChild(div);
 
         $("div").click(function() {
             $("#commentBox2").remove();       //Quita todo el código que tenga que ver con la lista
-            document.getElementById("idEditBtn" + IDedit).innerHTML = "<img src='editar.png' id='editImg'/>";
+            document.getElementById("idEditBtn" + IDedit).innerHTML = "<img src='../ExtraDocs/editar.png' id='editImg'/>";
             document.getElementById("dateID" + IDedit).disabled = true;
             //console.log("dateID" + editBtn);
             document.getElementById("idEditBtn" + IDedit).removeAttribute('onclick');
@@ -307,19 +234,6 @@ function listo(IDedit){
     });
 
 }
-
-/*$(function(){
-    $('#btnEditable').on('click', function(){
-      var esEditable = $('#postID0').attr('contenteditable');
-      if(esEditable){
-        $('#postID0').attr('contenteditable', false);
-        $('#btnEditable').html('Hacerlo Editable');
-      }else{
-        $('#postID0').attr('contenteditable', true);
-        $('#btnEditable').html('dejar der editar');
-      }
-    });
-})*/
 
 function eliminar(){
     var waste;
@@ -336,7 +250,7 @@ function eliminar(){
     });
 
 }
-
+/*
 function displayDate(num, date, msgN) {     //ID, fecha, msg
 
     if(i == 0){
@@ -390,7 +304,7 @@ function displayDate(num, date, msgN) {     //ID, fecha, msg
         //}
         
     }
-}
+}*/
 
 function displayDateMod(editID, artDate) {      //ID, fecha
     
@@ -580,18 +494,10 @@ function RBSelected(){
     }
 }
 
-/*
-function eliminarCajaResumen(){
-    //Si existe la caja o el div...
-    var div = document.getElementById('article')
-    if(div !== null){
-        while (div.hasChildNodes()){
-            div.removeChild(div.lastChild);
-        }
-    }
-}*/
-
-function borrar(id) {var elem = document.getElementById(id); return elem.parentNode.removeChild(elem);}
+function borrar(id) {
+    var elem = document.getElementById(id); 
+    return elem.parentNode.removeChild(elem);
+}
 
 function msj(titulo, contenido, idioma) {
     var padre = document.createElement('div');
