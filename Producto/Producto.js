@@ -48,8 +48,8 @@ $(window).on("load",function checkPosition(){
 
 //variables
 var i = 0;
-var iCat = 1;
-var valCat;
+//var iCat = 1;
+//var valCat;
 var panel;
 var btn;
 var msg;
@@ -97,8 +97,8 @@ $("#publicar").click(function(){
     
     var text = document.getElementById("commentBox");   //Toma el texto del commentBox
     date = document.querySelector('input[type="date"]');   //Toma el texto del DateTimePicker
-    var selCategory = RBSelected();
-    if(selCategory == "Categoría 1" || selCategory == "Categoría 2" || selCategory == "Categoría 3"){
+    //var selCategory = RBSelected();
+    //if(selCategory == "Categoría 1" || selCategory == "Categoría 2" || selCategory == "Categoría 3"){
         //console.log(text.innerHTML);
         //console.log(date.value);
         //console.log(date.value);
@@ -121,29 +121,29 @@ $("#publicar").click(function(){
 
         }
 
-        displayPost(text.innerHTML, date.value, selCategory, pags);
+        displayPost(text.innerHTML, date.value, pags);
         savePost(text.innerHTML);
-        //displayDate(i, date.value, msg2);
+        //displayDate(i, date.value, msg2);selCategory
         
         document.getElementById("commentBox").innerHTML = "";     //Limpia el commentBox
         document.getElementById("datepkd").value = "2022-01-01";     //Limpia el DateTimePicker
-        document.getElementById("IDCat1").checked = false;     //Limpia los RadioButtons
+        /*document.getElementById("IDCat1").checked = false;     //Limpia los RadioButtons
         document.getElementById("IDCat2").checked = false;     //Limpia los RadioButtons
-        document.getElementById("IDCat3").checked = false;     //Limpia los RadioButtons
+        document.getElementById("IDCat3").checked = false;     //Limpia los RadioButtons*/
         i = i + 1;
-        iCat = iCat + 1;
+        //iCat = iCat + 1;
 
-    }else{
+    //}//else{
         /*if(date.value == "2022-01-01"){
             alert("La categoría es obligatoria");
         }*/
-        msj('TestBlog', 'La categoría es obligatoria', 'Cerrar');
+        //msj('TestBlog', 'La categoría es obligatoria', 'Cerrar');
         //alert("La categoría es obligatoria");
-    }
+    //}
 
 });
-
-function displayPost(msgText, date, category, pag) {
+//category
+function displayPost(msgText, date, pag) {
     var html = document.querySelector(`#pag${pag}`);
 
     panel = document.createElement('article');
@@ -155,13 +155,13 @@ function displayPost(msgText, date, category, pag) {
     var name = document.createElement('h2');
     name.textContent = "andr3_c02";
     panel.appendChild(name);
-
+    /*
     var msgRB = document.createElement('p');
     msgRB.setAttribute('id', 'IDCatArt' + iCat);
     msgRB.setAttribute('class', 'CatIDC');
     msgRB.setAttribute('value', valCat);
     msgRB.textContent = category;
-    panel.appendChild(msgRB);
+    panel.appendChild(msgRB);*/
     
     msg = document.createElement('p');
     msg.setAttribute('id', 'postID' + i);
@@ -482,7 +482,7 @@ function desfiltrar(num){
     }
     */
 }
-
+/*
 function RBSelected(){
     if(document.getElementById('IDCat1').checked){
         valCat = 1;
@@ -497,7 +497,7 @@ function RBSelected(){
         return "Categoría 3";
     }
 }
-
+*/
 function borrar(id) {
     var elem = document.getElementById(id); 
     return elem.parentNode.removeChild(elem);
