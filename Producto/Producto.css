@@ -237,7 +237,7 @@ nav ul li:hover{
     /*justify-content: right;*/
 }
 
-h1{
+.h1{
     margin: 20px;
 }
 
@@ -270,6 +270,179 @@ h1{
 .article{
     padding: 10px 20px 0px 20px;
 }
+
+/* sección de comentarios */
+
+.comments{
+    grid-row: 7/12;
+    grid-column: 2/-2;
+}
+
+.container{
+    width: 90%;
+    margin: 0px auto;
+    margin-bottom: 20px;
+}
+
+#publicacion{
+    float: left;
+    width: calc(80% - 80px);
+    min-height: 50px;
+    background: rgb(219, 172, 172);
+    padding: 20px;
+    border-radius: 7px;
+    margin-top: 60px;
+}
+
+#publicacion p{
+    font-size: 20px; 
+}
+
+[contentEditable=true]:empty:not(:focus):before{
+    content:attr(placeholder)
+}
+
+.commentBox{ 
+    color: snow;
+    font-size: 17px; 
+    line-height: 1.5em;
+}
+
+.commentBox2{ 
+    color: black;
+    font-size: 17px; 
+    line-height: 1.5em;
+    position: relative;
+    top: -45px;
+    height: 10px;
+}
+
+[contenteditable] {
+    outline: 0px solid transparent;
+}
+
+.button{
+    width: 100px; height: 30px;
+    background-color: cornflowerblue; 
+    color: snow;
+    border: 1px;
+    border-radius: 15px; 
+    cursor: pointer;
+    transition: background-color 500ms;
+}
+
+.button:hover{
+    background-color: #5a2fa057; 
+}
+/*
+img{
+    width: 25px;
+    height: 25px;
+    float: right;
+    margin: -4%;
+}*/
+
+.editBtn{
+    background-color: lightblue; 
+    color: snow;
+    border: 1px;
+    border-radius: 15px; 
+    cursor: pointer;
+    transition: background-color 500ms;
+    position: relative;
+    right: -30px;
+    top: -70px;
+}
+
+.editBtn:hover{
+    background-color: #a02f8757; 
+}
+
+.deleteBtn{
+    background-color: lightcoral; 
+    color: snow;
+    border: 1px;
+    border-radius: 15px; 
+    cursor: pointer;
+    transition: background-color 500ms;
+    position: relative;
+    right: -45px;
+    top: -70px;
+}
+
+.deleteBtn:hover{
+    background-color: #2f37a057; 
+}
+
+#contenido{
+    float: left;
+    width: calc(80% - 80px);
+    min-height: 500px;
+    background: transparent;
+    padding: 25px;
+}
+
+.article{
+    color: black;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid black;
+   
+}
+
+.datepkd, .datepkdP{
+    background: #f0f0f000;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px;
+}
+
+.datepkdP{
+    margin-top: 25px;
+}
+
+
+
+
+#buttons {      /* estilo de botones */
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 3px 0px;
+}
+#buttons a{
+    background-color: rgb(39, 179, 179); 
+    color: snow;
+    border: 1px;
+    border-radius: 15px; 
+    cursor: pointer;
+    transition: background-color 500ms;
+    margin: 5px 7px 5px;
+    height: 100%;padding: 7px 15px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.paginacion ul{
+    list-style: none;
+    text-align: center;
+}
+
+.paginacion ul li{
+    display: inline-block;
+    margin: 5px;
+    padding: 12px 15px 12px;
+}
+
+.paginacion ul li:hover{
+    color: whitesmoke;
+    background-color: rgba(105, 90, 205, 0.548);
+    border: 3px;
+    border-radius: 30px;
+    padding: 12px 15px 12px;
+}
+
+
+/* sección de comentarios */
 
 .other{
     grid-row: 12/-1;

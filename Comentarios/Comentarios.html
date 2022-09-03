@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="Comentarios.css">
+        <title>Test Blog - Inicio</title>
+
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <!-- inicio sección de publicaciones -->
+                    
+            <section id="publicacion">
+                <div id="commentBox" contenteditable="true" dir="auto" class="commentBox" placeholder="Agrega un comentario..."></div>
+                <br>
+                    <div class="cat">Categoría: (No editable)
+                    <input type="radio" class="catRB" name="genero" id="IDCat1"/> Categoría 1
+                    <input type="radio" class="catRB" name="genero" id="IDCat2"/> Categoría 2
+                    <input type="radio" class="catRB" name="genero" id="IDCat3"/> Categoría 3
+                    </div>
+                <br>
+                <button type="button" id="publicar" class="button">Publicar</button>
+                <input type="date" id="datepkd" class="datepkd" value="2022-01-01">
+            </section>
+
+            <section id="contenido">
+                <section class="paginacion">
+                    <ul id="ulli">
+                        <li type="button" id="li1" onclick="nPags(1)">1</li>
+
+                    </ul>
+                </section>
+
+                <div id="pag1">
+                </div>
+                
+            </section>
+
+            <div id="searchList" class="searchList">
+                <ul id="searchUl">
+                </ul>
+            </div>
+
+            <!-- fin sección de publicaciones -->
+
+        </div>
+        
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="Comentarios.js"></script>
+
+    </body>
+</html>

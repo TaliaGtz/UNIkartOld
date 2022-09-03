@@ -32,7 +32,7 @@
 
     <section class="grid">
         <div class="square">
-            <h1>Producto</h1>
+            <h1 class="h1">Producto</h1>
         </div>
 
         <!-- sección de Producto -->
@@ -43,11 +43,53 @@
                 <p id="productName">Nombre</p>
                 <p>Precio/cotización</p>
                 <p>Categoría</p>
+                <d>Disponibilidad</d>
                 <p>Descripción Descripción Descripción Descripción Descripción</p>
+                <p>Valoración</p>
             </div>
         </section>
 
-        <!-- fin sección de Prodcto -->
+        <!-- fin sección de Producto -->
+
+        <!-- sección de Comentarios -->
+
+        <div class="comments">
+            <h1>Comentarios</h1>
+            
+            <section id="publicacion">
+                <div id="commentBox" contenteditable="true" dir="auto" class="commentBox" placeholder="Agrega un comentario..."></div>
+                <br>
+                    <div class="cat">Categoría: (No editable)
+                    <input type="radio" class="catRB" name="genero" id="IDCat1"/> Categoría 1
+                    <input type="radio" class="catRB" name="genero" id="IDCat2"/> Categoría 2
+                    <input type="radio" class="catRB" name="genero" id="IDCat3"/> Categoría 3
+                    </div>
+                <br>
+                <button type="button" id="publicar" class="button">Publicar</button>
+                <input type="date" id="datepkd" class="datepkd" value="2022-01-01">
+            </section>
+
+            <section id="contenido">
+                <section class="paginacion">
+                    <ul id="ulli">
+                        <li type="button" id="li1" onclick="nPags(1)">1</li>
+
+                    </ul>
+                </section>
+
+                <div id="pag1">
+                </div>
+                
+            </section>
+
+            <div id="searchList" class="searchList">
+                <ul id="searchUl">
+                </ul>
+            </div>
+        
+        </div>
+
+        <!-- fin sección de Comentarios -->
 
         <!-- sección de footer -->
 
@@ -71,5 +113,6 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="Producto.js"></script>
+    <script scr="Comentarios.js"></script>
 </body>
 </html>
