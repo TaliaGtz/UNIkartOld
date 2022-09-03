@@ -242,7 +242,7 @@ nav ul li:hover{
     margin: 20px;
 }
 
-#contenido{
+#contenidoImg{
     grid-row: 2/12;
     grid-column: 1/14;
     overflow: hidden;
@@ -305,7 +305,7 @@ nav ul li:hover{
     background: rgb(219, 172, 172);
     padding: 20px;
     border-radius: 7px;
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
 #publicacion p{
