@@ -43,21 +43,6 @@ body{
     filter: invert(100%) sepia(28%) saturate(1220%) hue-rotate(345deg) brightness(170%) contrast(113%);
 }
 
-.SpBtns{
-    display: none;
-    padding: 10px 20px;
-    font-family: 'Ubuntu', sans-serif;
-    color: #f0f8ff;
-    background-color: #84b295;
-    border: 0px;
-    border-bottom: 5px solid #3d8044;
-    font-size: 20px;
-    cursor: pointer;
-}
-.SpBtns:hover{
-    background-color: #3d8044;
-}
-
 .nav-link{
     color: #f0f8ff;
 }
@@ -70,13 +55,6 @@ nav ul li:hover{
     background-color: #428347;
 }
 #register:hover{
-    background-color: #2a6b30;
-}
-
-#regSpBtns{
-    background-color: #428347;
-}
-#regSpBtns:hover{
     background-color: #2a6b30;
 }
 
@@ -125,12 +103,6 @@ nav ul li:hover{
     }*/
     .header{
         color: floralwhite;
-    }
-    .SpBtns{
-        display: block;
-    }
-    .liSpBtns{
-        display: none;
     }
     .nav-toggle{
         display: block;
@@ -226,13 +198,6 @@ nav ul li:hover{
 }*/
 
 @media screen and (max-width: 497px){
-    .SpBtns{
-        /*font-size: 15px;*/
-        display: none;
-    }
-    .liSpBtns{
-        display: block;
-    }
     #register{
         background-color: #2a6b30;
     }
@@ -271,49 +236,6 @@ nav ul li:hover{
     justify-content: space-between;
     /*justify-content: right;*/
 }
- 
-.menuABC{
-    display: flex;
-    list-style: none;
-}
-
-.ABC{
-    font-size: 20px;
-    padding: 0px 20px;
-    line-height: 55px;
-    width: max-content;
-    color: rgb(219, 79, 54);
-    background-color: #f5deb3;
-    cursor: pointer;
-    font-family: 'Ubuntu', sans-serif;
-    align-items: center;
-    justify-content: center;
-    display: inline-flex;     /*Para poner más botones a la derecha RIP*/
-    border: none;
-    transition: .3s ease all;
-    position: relative;
-    overflow: hidden;
-}
-.ABC span{
-    position: relative;
-    z-index: 2;
-    transition: .3s ease all;
-}
-.ABC::after{
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: #e7c991;
-    position: absolute;
-    z-index: 1;
-    top: -80px;
-    left: 0;
-    transition: .3s ease-in-out all;
-}
-.ABC:hover::after{
-    top: 0;
-    transition: .3 ease-in-out all;
-}
 
 h1{
     margin: 20px;
@@ -321,7 +243,28 @@ h1{
 
 #contenido{
     grid-row: 2/12;
-    grid-column: 1/10;
+    grid-column: 1/14;
+    overflow: hidden;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.productImg{
+    max-width: 300px;
+    height: auto;
+}
+
+#productName{
+    font-size: 3vh;
+    flex: 1;
+}
+
+.description{
+    /*­­­­grid-row: 2/6;
+    grid-column: 8/14;*/
+    color:#2c1507;
+    padding: 5px;
 }
 
 .article{
