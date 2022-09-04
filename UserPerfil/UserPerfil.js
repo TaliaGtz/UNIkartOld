@@ -37,7 +37,7 @@ $(window).on("load",function checkPosition(){
     }
 });
 
-
+////////////////////////////////////////////////////////////////
 
 var reader;
 var input2;
@@ -58,6 +58,7 @@ function readURL(input) {
 }
   
 $("#userPic").change(function() { //Cuando el input cambie (se cargue un nuevo archivo) se va a ejecutar de nuevo el cambio de imagen y se verá reflejado.
+    console.log("sfd");
     readURL(this);
 });
 

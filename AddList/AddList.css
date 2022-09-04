@@ -46,6 +46,8 @@
     padding: 15px 0px;
     font-size: 20px; 
     text-align: center;
+    border: none;
+    border-bottom: 1px solid tomato;
 }
 .newModal span {       /* estilo de contenido */
     display: block;
@@ -55,7 +57,7 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    padding: 3px 0px;
+    padding: 10px 7px;
 }
 #modButtons a{
     background-color: #428347; 
@@ -90,4 +92,52 @@ form{
 
 [contenteditable] {
     outline: 0px solid transparent;
+}
+
+.user{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.file{
+    clip-path: circle(50.3% at 50% 50%);
+}
+
+.image{
+    /*background-color: aqua;*/
+    position: relative;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    margin: 5px;
+}
+
+input[type="file"]{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+label{
+    padding: 10px;
+    width: 150px;
+    display: block;
+    /*margin-top: 10px;*/
+    text-align: center;
+    background-color: #3d8044;
+    color: aliceblue;
+    transition: .5s;
+    border-radius: 10px;
+    /*box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.527);*/
+}
+
+label:hover{
+    background-color: #84b295;
 }

@@ -40,6 +40,21 @@ $(window).on("load",function checkPosition(){
 });
 
 $("#publicar").click(function(){
+    Modal('Agregar Lista', 
+    '<div class="user"><img src="../ExtraDocs/Menu.png" height="100" width="100" id="image" alt="Imagen" class="file"></div>' + 
+    '<div class="image"><label for="archivo">Cambiar imagen</label><input type="file" id="userPic" name="archivo"/></div>' + 
+    '<p> Nombre de la lista: <input type="text" name="nombre" class="nombre" contenteditable="true" required/></p>' + 
+    '<br>' + '<br>' + 
+    '<p> Categoría: <input type="radio" name="Categoria" value="Categoría 1" required/> Categoría 1 <input type="radio" name="Categoria" value="Categoría 2" required/> Categoría 2 </p>' + 
+    '<br>' + '<br>' + 
+    '<p> Privacidad: <input type="radio" name="Privacidad" value="Privado" required/> Privado <input type="radio" name="Privacidad" value="Público" required/> Público </p>' + 
+    '<br>' + '<br>' + 
+    '<p>Descripción:</p>' + '<br>' + 
+    '<div id="commentBox" contenteditable="true" dir="auto" class="commentBox" placeholder="Agrega un comentario..."></div>', 
+    'Aceptar');
+});
+
+function agregar(){
     i = i + 1;
     var html = document.querySelector("#contenido");
 
@@ -103,20 +118,7 @@ $("#publicar").click(function(){
     datmsg.setAttribute('value', date);
     datmsg.setAttribute('disabled', 'true');
     divisor.appendChild(datmsg);*/
-
-    /*msj('UNIkart', 'Lista guardada con éxito', 'Cerrar');*/
-    Modal('Agregar Lista', 
-    '<p> Nombre de la lista: <input type="text" name="nombre" class="nombre" contenteditable="true" required/></p>' + 
-    '<br>' + '<br>' + 
-    '<p> Categoría: <input type="radio" name="Categoria" value="Categoría 1" required/> Categoría 1 <input type="radio" name="Categoria" value="Categoría 2" required/> Categoría 2 </p>' + 
-    '<br>' + '<br>' + 
-    '<p> Privacidad: <input type="radio" name="Privacidad" value="Privado" required/> Privado <input type="radio" name="Privacidad" value="Público" required/> Público </p>' + 
-    '<br>' + '<br>' + 
-    '<p>Descripción:</p>' + '<br>' + 
-    '<div id="commentBox" contenteditable="true" dir="auto" class="commentBox" placeholder="Agrega un comentario..."></div>', 
-    'Aceptar');
-
-});
+}
 
 $("#eliminar").click(function(){
     j = j + 1;
@@ -157,7 +159,7 @@ function Modal(titulo, contenido, idioma) {
     var boton = "";
     ModalData.innerHTML = '<div id="modal-back"></div><div class="newModal"><div id="modal-new"><h3>'
     + titulo +'</h3><form id="mc">'
-    + contenido +'</form><div id="modButtons"><a id="mclose" href="#">'
+    + contenido +'</form><div id="modButtons" onclick="agregar()"><a id="mclose" href="#">'
     + bc +'</a>' 
     + boton + '</div></div></div>';
     document.querySelector(".newModal").style.height = document.getElementById("mc").offsetHeight + 150 + 'px';
@@ -168,3 +170,27 @@ function Modal(titulo, contenido, idioma) {
         borrarModal('modal'); 
     }
 }
+
+/*Cambio de imagen*/
+var reader;
+var input2;
+var texto;
+
+function readURL(input) {
+    input2 = input;
+    if (input.files && input.files[0]) { //Revisamos que el input tenga contenido
+      reader = new FileReader(); //Leemos el contenido
+      
+      reader.onload = function(e) { //Al cargar el contenido lo pasamos como atributo de la imagen de arriba
+        $('#image').attr('src', e.target.result);
+        
+      }
+      
+      reader.readAsDataURL(input.files[0]);
+    }
+}
+  
+$("#userPic").change(function() { //Cuando el input cambie (se cargue un nuevo archivo) se va a ejecutar de nuevo el cambio de imagen y se verá reflejado.
+    readURL(this);
+    console.log("sg");
+});
