@@ -328,6 +328,12 @@ h1{
     padding: 10px 20px 0px 20px;
 }
 
+.file{
+    clip-path: circle(50% at 50% 50%);
+    float: left;
+    margin: 10px;
+}
+
 .other{
     grid-row: 12/-1;
     grid-column: 1/-1;

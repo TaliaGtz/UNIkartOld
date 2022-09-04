@@ -175,7 +175,6 @@ nav ul li:hover{
         font-size: 13px;
     }
 }
-
 @media screen and (max-width: 686px){
     .grid{
         /*background-color: hotpink;*/
@@ -319,8 +318,21 @@ h1{
     margin: 20px;
 }
 
+#contenido{
+    grid-row: 2/-5;
+    grid-column: 1/-1;
+}
+
 .article{
     padding: 10px 20px 0px 20px;
+    display: flex;
+    display: inline;
+}
+
+.file{
+    clip-path: circle(50% at 50% 50%);
+    float: left;
+    margin: 10px;
 }
 
 .other{

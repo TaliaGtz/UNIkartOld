@@ -95,6 +95,9 @@ nav ul li:hover{
 }
 
 /*Responsive*/
+@media screen and (min-width: 961px){
+    
+}
 @media screen and (max-width: 960px){   /*843 y 960*/
     #navList{
         display: none;

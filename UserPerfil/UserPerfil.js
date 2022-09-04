@@ -19,14 +19,12 @@ navToggle.addEventListener("click", ()=>{
 function toggle(num){
     if(num == 1){
         document.getElementById("navList").style = "display: block";
-        document.getElementById("regSpBtns").style = "height: 80px";
         document.getElementById("iBars").classList.add("moveBars");
         document.getElementById("iBars").classList.remove("resetBars");
     }
 
     if(num == 2){
         document.getElementById("navList").style = "display: none";
-        document.getElementById("regSpBtns").style = "height: 80px";
         document.getElementById("iBars").classList.add("resetBars");
         document.getElementById("iBars").classList.remove("moveBars");
     }

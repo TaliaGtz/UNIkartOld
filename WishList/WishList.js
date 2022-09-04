@@ -21,14 +21,12 @@ navToggle.addEventListener("click", ()=>{
 function toggle(num){
     if(num == 1){
         document.getElementById("navList").style = "display: block";
-        document.getElementById("regSpBtns").style = "height: 80px";
         document.getElementById("iBars").classList.add("moveBars");
         document.getElementById("iBars").classList.remove("resetBars");
     }
 
     if(num == 2){
         document.getElementById("navList").style = "display: none";
-        document.getElementById("regSpBtns").style = "height: 80px";
         document.getElementById("iBars").classList.add("resetBars");
         document.getElementById("iBars").classList.remove("moveBars");
     }
@@ -51,21 +49,34 @@ $("#publicar").click(function(){
     panel.setAttribute('style', 'display: block');
     html.appendChild(panel);
 
+    var icon = document.createElement('img');
+    icon.setAttribute('src', '../ExtraDocs/Soup.png');
+    icon.setAttribute('height', '70');
+    icon.setAttribute('width', '70');
+    icon.setAttribute('id', 'image');
+    icon.setAttribute('alt', 'Imagen');
+    icon.setAttribute('class', 'file');
+    panel.appendChild(icon);
+
+    divisor = document.createElement('div');
+    divisor.setAttribute('class', 'contDiv');
+    panel.appendChild(divisor);
+
     var name = document.createElement('h2');
     name.textContent = "Lista" + i;
-    panel.appendChild(name);
+    divisor.appendChild(name);
 
     var msgRB = document.createElement('p');
     msgRB.textContent = "categoría";
-    panel.appendChild(msgRB);
+    divisor.appendChild(msgRB);
 
     var msgRB = document.createElement('p');
     msgRB.textContent = "privada/pública";
-    panel.appendChild(msgRB);
+    divisor.appendChild(msgRB);
     
     msg = document.createElement('p');
     msg.textContent = "Descripción";
-    panel.appendChild(msg);
+    divisor.appendChild(msg);
     /*
     var datmsg = document.createElement('input');
     datmsg.setAttribute('type', 'date');
@@ -74,7 +85,7 @@ $("#publicar").click(function(){
     //console.log(date);
     datmsg.setAttribute('value', date);
     datmsg.setAttribute('disabled', 'true');
-    panel.appendChild(datmsg);*/
+    divisor.appendChild(datmsg);*/
 });
 
 $("#eliminar").click(function(){
