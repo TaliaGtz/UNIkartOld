@@ -335,6 +335,18 @@ h1{
     margin: 10px;
 }
 
+.contDiv{
+    width: 80%;
+    align-items: flex-start;
+}
+
+#view{
+    font-size: 30px;
+    float: right;
+    position: relative;
+    top: -52px;
+}
+
 .other{
     grid-row: 12/-1;
     grid-column: 1/-1;

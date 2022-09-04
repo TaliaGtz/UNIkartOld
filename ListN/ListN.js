@@ -50,7 +50,7 @@ $("#publicar").click(function(){
     html.appendChild(panel);
 
     var icon = document.createElement('img');
-    icon.setAttribute('src', '../ExtraDocs/Menu.png');
+    icon.setAttribute('src', '../ExtraDocs/Soup.png');
     icon.setAttribute('height', '70');
     icon.setAttribute('width', '70');
     icon.setAttribute('id', 'image');

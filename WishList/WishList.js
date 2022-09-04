@@ -50,7 +50,7 @@ $("#publicar").click(function(){
     html.appendChild(panel);
 
     var icon = document.createElement('img');
-    icon.setAttribute('src', '../ExtraDocs/Soup.png');
+    icon.setAttribute('src', '../ExtraDocs/Menu.png');
     icon.setAttribute('height', '70');
     icon.setAttribute('width', '70');
     icon.setAttribute('id', 'image');
@@ -77,6 +77,18 @@ $("#publicar").click(function(){
     msg = document.createElement('p');
     msg.textContent = "Descripción";
     divisor.appendChild(msg);
+
+    var view = document.createElement('i');
+    view.setAttribute('class', 'fa-solid fa-circle-chevron-right');
+    view.setAttribute('id', 'view');
+    divisor.appendChild(view);
+
+    var br = document.createElement('br');
+    divisor.appendChild(br);
+
+    var hr = document.createElement('hr');
+    divisor.appendChild(hr);
+
     /*
     var datmsg = document.createElement('input');
     datmsg.setAttribute('type', 'date');
@@ -86,9 +98,33 @@ $("#publicar").click(function(){
     datmsg.setAttribute('value', date);
     datmsg.setAttribute('disabled', 'true');
     divisor.appendChild(datmsg);*/
+
+    msj('UNIkart', 'Lista guardada con éxito', 'Cerrar');
 });
 
 $("#eliminar").click(function(){
     j = j + 1;
     $("#article" + j).remove();       //Quita todo el código que tenga que ver con la lista
 });
+/*
+$("article" + num).click(function(){
+
+});*/
+
+function borrar(id) {
+    var elem = document.getElementById(id); 
+    return elem.parentNode.removeChild(elem);
+}
+
+function msj(titulo, contenido, idioma) {
+var padre = document.createElement('div');
+padre.id = 'modal';
+document.body.appendChild(padre);
+var bc = idioma ? idioma : 'Aceptar';
+var ModalData = document.getElementById("modal");
+var boton = "";
+ModalData.innerHTML = '<div id="modal-back"></div><div class="modal"><div id="modal-c"><h3>'+titulo+'</h3><span id="mc">'+contenido+'</span><div id="buttons"><a id="mclose" href="#">'+bc+'</a>'+boton+'</div></div></div>';
+document.querySelector(".modal").style.height = document.getElementById("mc").offsetHeight+100 + 'px';
+document.getElementById('mclose').onclick=function(){ borrar('modal'); };
+document.getElementById('modal-back').onclick=function(){ borrar('modal'); }
+}
