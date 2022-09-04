@@ -334,6 +334,18 @@ h1{
     margin: 10px;
 }
 
+#view{
+    font-size: 30px;
+    float: right;
+    position: relative;
+    top: -52px;
+    cursor: pointer;
+    color: #2c1507;
+}
+#view:hover{
+    color: #67432e;
+}
+
 .other{
     grid-row: 12/-1;
     grid-column: 1/-1;

@@ -77,6 +77,23 @@ $("#publicar").click(function(){
     msg = document.createElement('p');
     msg.textContent = "Media(img,mp4)";
     divisor.appendChild(msg);
+
+    var view = document.createElement('a');
+    view.setAttribute('id', 'arrow');
+    view.setAttribute('href', '../Producto/Producto.html');
+    divisor.appendChild(view);
+
+    var arrow = document.createElement('i');
+    arrow.setAttribute('id', 'view');
+    arrow.setAttribute('class', 'fa-solid fa-circle-chevron-right');
+    view.appendChild(arrow);
+
+    var br = document.createElement('br');
+    divisor.appendChild(br);
+
+    var hr = document.createElement('hr');
+    divisor.appendChild(hr);
+
     /*
     var datmsg = document.createElement('input');
     datmsg.setAttribute('type', 'date');
