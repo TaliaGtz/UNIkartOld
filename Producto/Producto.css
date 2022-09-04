@@ -490,13 +490,14 @@ div.valoracion input:checked ~ label {
 
 .prodSimi .card{
     width: 330px;
-    height: 260px;
+    height: 240px;
     border-radius: 8px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.527);
     overflow: hidden;
     margin: 20px;
     text-align: center;
     transition: all 0.25s ease;
+    color: #2c1507;
 }
 
 .prodSimi .card:hover{
