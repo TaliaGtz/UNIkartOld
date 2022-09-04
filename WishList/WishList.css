@@ -345,6 +345,11 @@ h1{
     float: right;
     position: relative;
     top: -52px;
+    cursor: pointer;
+    color: #2c1507;
+}
+#view:hover{
+    color: #67432e;
 }
 
 .other{
