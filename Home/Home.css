@@ -15,7 +15,8 @@ a{
 body{
     color:#2c1507;
     font-family: 'Ubuntu', sans-serif;
-    background: floralwhite;
+    background: linear-gradient(rgba(255, 250, 240, 0.83), rgba(255,250,240,0.83)), url(../ExtraDocs/background.jpg);
+    background-color: floralwhite;
     display: flex;
     min-height: 100vh;
 }
