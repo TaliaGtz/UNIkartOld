@@ -40,8 +40,8 @@
     margin: auto;
 }
 .newModal {        /* estilo de contenedor */
-    top: 27.5%;
-    left: 79.5%;
+    top: 50%;
+    left: 50%;
     -webkit-transform:translate(-50%,-50%);
     -ms-transform:translate(-50%,-50%);
     transform:translate(-50%,-50%);

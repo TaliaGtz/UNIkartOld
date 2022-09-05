@@ -50,7 +50,8 @@ $("#publicar").click(function(){
     '<p> Privacidad: <input type="radio" name="Privacidad" value="Privado" required/> Privado <input type="radio" name="Privacidad" value="Público" required/> Público </p>' + 
     '<br>' + '<br>' + 
     '<p>Descripción:</p>' + '<br>' + 
-    '<div id="commentBox" contenteditable="true" dir="auto" class="commentBox" placeholder="Agrega un comentario..."></div>', 
+    '<div id="commentBox" contenteditable="true" dir="auto" class="commentBox" placeholder="Agrega un comentario..."></div>' +
+    '</form><div id="modButtons" onclick="agregar()"><a id="mclose" href="#">', 
     'Aceptar');
 });
 
@@ -144,6 +145,46 @@ document.getElementById('mclose').onclick=function(){ borrar('modal'); };
 document.getElementById('modal-back').onclick=function(){ borrar('modal'); }
 }
 
+/*Cart*/
+$("#cart").click(function(){
+    Modal('Carrito de compras', 
+    '<div class="user">'+
+        '<img src="../ExtraDocs/Soup.png" height="70" width="70" id="image" alt="Imagen" class="file">'+
+        '<p class="productName">Producto</p>'+
+        '<i class="fa-solid fa-square-minus quantity"></i>'+
+        '<p class="quantityNum">1</p>'+
+        '<i class="fa-solid fa-square-plus quantity"></i>'+
+    '</div>'+
+    '<div class="user">'+
+        '<img src="../ExtraDocs/Soup.png" height="70" width="70" id="image" alt="Imagen" class="file">'+
+        '<p class="productName">Producto</p>'+
+        '<i class="fa-solid fa-square-minus quantity"></i>'+
+        '<p class="quantityNum">1</p>'+
+        '<i class="fa-solid fa-square-plus quantity"></i>'+
+    '</div>'+
+    '</form><div id="modButtons"><a id="mclose" href="#">',   
+    'Cerrar');
+});
+
+function addCart(){
+    Modal('Carrito de compras', 
+    '<div class="user">'+
+        '<img src="../ExtraDocs/Soup.png" height="70" width="70" id="image" alt="Imagen" class="file">'+
+        '<p class="productName">Producto</p>'+
+        '<i class="fa-solid fa-square-minus quantity"></i>'+
+        '<p class="quantityNum">1</p>'+
+        '<i class="fa-solid fa-square-plus quantity"></i>'+
+    '</div>'+
+    '<div class="user">'+
+        '<img src="../ExtraDocs/Soup.png" height="70" width="70" id="image" alt="Imagen" class="file">'+
+        '<p class="productName">Producto</p>'+
+        '<i class="fa-solid fa-square-minus quantity"></i>'+
+        '<p class="quantityNum">1</p>'+
+        '<i class="fa-solid fa-square-plus quantity"></i>'+
+    '</div>',   
+    'Cerrar');
+};
+
 /*Modal*/
 function borrarModal(id) {
     var elem = document.getElementById(id); 
@@ -159,7 +200,7 @@ function Modal(titulo, contenido, idioma) {
     var boton = "";
     ModalData.innerHTML = '<div id="modal-back"></div><div class="newModal"><div id="modal-new"><h3>'
     + titulo +'</h3><form id="mc">'
-    + contenido +'</form><div id="modButtons" onclick="agregar()"><a id="mclose" href="#">'
+    + contenido
     + bc +'</a>' 
     + boton + '</div></div></div>';
     document.querySelector(".newModal").style.height = document.getElementById("mc").offsetHeight + 150 + 'px';
