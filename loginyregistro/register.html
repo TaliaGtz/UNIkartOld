@@ -48,9 +48,16 @@
                 <!--- CONFIRM PASSWORD --->
                 <label for="confirmpassword">Confirme Contraseña</label>
                 <input type="password" id="confirmpassword" placeholder="Inserte Contraseña" required>
+
+                <label for="tipo_de_usuario">Tipo de Usuario</label>
+
+                <input type="radio" name="tipo_de_usuario" value="cliente"> Cliente<br>
+
+                <input type="radio" name="tipo_de_usuario" value="vendedor"> Vendedor
+                
             
                 <nav>
-                    <a href="prueba.html"><input type="button" value="Register" onclick="validar()"></a>
+                    <a href="prueba.html"><input type="button" value="Registrarse" onclick="validar()"></a>
                 </nav>
                 <nav>
                     <a href="login.html">Ya estás registrado?</a>
