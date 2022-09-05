@@ -43,6 +43,7 @@ $(window).on("load",function checkPosition(){
     }
 });
 
+/*Cart*/
 $("#cart").click(function(){
     Modal('Carrito de compras', 
     '<div class="user">'+

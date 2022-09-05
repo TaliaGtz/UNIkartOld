@@ -18,7 +18,7 @@ navToggle.addEventListener("click", ()=>{
 
 function toggle(num){
     if(num == 1){
-        document.getElementById("navList").style = "display: block";
+        document.getElementById("navList").style = "display: flex";
         document.getElementById("SpBtns").style = "height: 80px";
         document.getElementById("regSpBtns").style = "height: 80px";
         document.getElementById("iBars").classList.add("moveBars");
@@ -38,13 +38,9 @@ function toggle(num){
     }
 }
 
-$(document).load($(window).bind("resize", checkPosition));
-
-function checkPosition()
-{
+$(window).on("load",function checkPosition(){
     if($(window).width() > 843)
     {
         document.getElementById("navList").removeAttribute("style");
     }
-}
-
+});

@@ -94,33 +94,11 @@ nav ul li:hover{
     cursor: pointer;
 }
 
-.cart{
-    color:floralwhite;
-    background: none;
-    border: none;
-    font-size: 30px;
-    padding: 10px 20px;
-    line-height: 60px;
-    display: block;
-    cursor: pointer;
-}
-
-.cart:hover{
-    background-color: #428347;
-}
-
 .btns{
     display: flex;
 }
 
 /*Responsive*/
-.visible{
-    display: block;
-}
-.invisible{
-    display: none;
-}
-
 @media screen and (max-width: 1920px){
     #navList{
         display: flex;

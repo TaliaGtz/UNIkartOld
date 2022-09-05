@@ -115,7 +115,16 @@ nav ul li:hover{
     cursor: pointer;
 }
 
+.btns{
+    display: flex;
+}
+
 /*Responsive*/
+@media screen and (max-width: 1920px){
+    #navList{
+        display: flex;
+    }
+}
 @media screen and (max-width: 1384px){   /*843 y 960*/
     #navList{
         display: none;

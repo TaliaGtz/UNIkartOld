@@ -20,7 +20,7 @@ navToggle.addEventListener("click", ()=>{
 
 function toggle(num){
     if(num == 1){
-        document.getElementById("navList").style = "display: block";
+        document.getElementById("navList").style = "display: flex";
         document.getElementById("iBars").classList.add("moveBars");
         document.getElementById("iBars").classList.remove("resetBars");
     }

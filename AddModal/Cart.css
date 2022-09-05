@@ -5,6 +5,20 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
+.cart{
+    color:floralwhite;
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 10px 20px;
+    line-height: 60px;
+    display: block;
+    cursor: pointer;
+}
+.cart:hover{
+    background-color: #428347;
+}
+
 @keyframes modal{0%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3)}50%{opacity:1}}
 .newModal {        /* estilo del contenedor padre */
     position: absolute;
