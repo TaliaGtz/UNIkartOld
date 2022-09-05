@@ -94,9 +94,37 @@ nav ul li:hover{
     cursor: pointer;
 }
 
+.cart{
+    color:floralwhite;
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 10px 20px;
+    line-height: 60px;
+    display: block;
+    cursor: pointer;
+}
+
+.cart:hover{
+    background-color: #428347;
+}
+
+.btns{
+    display: flex;
+}
+
 /*Responsive*/
-@media screen and (min-width: 961px){
-    
+.visible{
+    display: block;
+}
+.invisible{
+    display: none;
+}
+
+@media screen and (max-width: 1920px){
+    #navList{
+        display: flex;
+    }
 }
 @media screen and (max-width: 1384px){   /*843 y 960*/
     #navList{
@@ -210,9 +238,13 @@ nav ul li:hover{
     }
 }
 
-@media screen and (max-width: 364px){
+@media screen and (max-width: 390px){
     .footer{
         grid-row: 13/-1;
+    }
+    #publicacion{
+        width: 100%;
+        background-color: firebrick;
     }
 }
 
@@ -346,7 +378,7 @@ nav ul li:hover{
     content:attr(placeholder)
 }
 
-.commentBox{ 
+.commentBoxP{ 
     color: snow;
     font-size: 17px; 
     line-height: 1.5em;

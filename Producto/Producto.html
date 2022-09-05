@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UNIkart - Producto</title>
     <link rel="stylesheet" href="Producto.css">
+    <link rel="stylesheet" href="../AddModal/Cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://kit.fontawesome.com/29079834be.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/7e5b2d153f.js" crossorigin="anonymous"></script>
@@ -29,7 +30,10 @@
                 <a href="../ExtraDocs/FAQ.html" class="nav-menu-link nav-link"><li class="nav-menu-item">Consulta de ventas</li></a>
                 <a href="../ExtraDocs/FAQ.html" class="nav-menu-link nav-link"><li class="nav-menu-item">Agregar Categoría</li></a>
             </ul>  
-            <button id="bars" class="nav-toggle"><i id="iBars" class="fas fa-bars"></i></button>
+            <div class="btns">
+                <button id="cart" class="cart"><i class="fa-solid fa-cart-shopping"></i></button>
+                <button id="bars" class="nav-toggle"><i id="iBars" class="fas fa-bars"></i></button>
+            </div>
         </nav>
     </header>
 
@@ -50,7 +54,7 @@
                 <d>Disponibilidad</d>
                 <p>Descripción Descripción Descripción Descripción Descripción</p>
                 <a href="../WishList/WishList.html"><i id="add" class="fa-solid fa-heart-circle-plus"></i></a>
-                <a href="../WishList/WishList.html"><i id="addCart" class="fa-solid fa-cart-plus"></i></a>
+                <a href="#" onclick="addCart()"><i id="addCart" class="fa-solid fa-cart-plus"></i></a>
                 <!--<i id="add" class="fa-solid fa-circle-plus"></i>-->
             </div>
         </section>
@@ -63,7 +67,7 @@
             <h1>Comentarios</h1>
             
             <section id="publicacion">
-                <div id="commentBox" contenteditable="true" dir="auto" class="commentBox" placeholder="Agrega un comentario..."></div>
+                <div id="commentBoxP" contenteditable="true" dir="auto" class="commentBoxP" placeholder="Agrega un comentario..."></div>
                 <br>
                 <!--<div class="cat">Categoría: (No editable)
                     <input type="radio" class="catRB" name="genero" id="IDCat1"/> Categoría 1
@@ -115,10 +119,17 @@
             <div class="prodSimi">
                 <div class="card">
                     <img src="../ExtraDocs/Soup.png" width="150px" height="150px">
-                    <h4>Tìtulo</h4>
+                    <h4>Producto</h4>
                     <p>Precio/Cotización</p>
                     <br>
                     <a href="#">Leer más</a>
+                </div>
+                <div class="card">
+                    <img src="../ExtraDocs/Soup.png" width="150px" height="150px">
+                    <h4>Producto</h4>
+                    <p>Precio/Cotización</p>
+                    <br>
+                    <a href="../Producto/Producto.html">Leer más</a>
                 </div>
                 <div class="card">
                     <img src="../ExtraDocs/Soup.png" width="150px" height="150px">

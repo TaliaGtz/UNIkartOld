@@ -42,7 +42,7 @@ $(window).on("load",function checkPosition(){
 $("#publicar").click(function(){
     Modal('Agregar Lista', 
     '<div class="user"><img src="../ExtraDocs/Menu.png" height="100" width="100" id="image" alt="Imagen" class="file"></div>' + 
-    '<div class="image"><label for="archivo">Cambiar imagen</label><input type="file" id="userPic" name="archivo"/></div>' + 
+    '<div class="image"><label id="archivo" for="archivo">Cambiar imagen</label><input type="file" id="userPic" name="archivo"/></div>' + 
     '<p> Nombre de la lista: <input type="text" name="nombre" class="nombre" contenteditable="true" required/></p>' + 
     '<br>' + '<br>' + 
     '<p> Categoría: <input type="radio" name="Categoria" value="Categoría 1" required/> Categoría 1 <input type="radio" name="Categoria" value="Categoría 2" required/> Categoría 2 </p>' + 
