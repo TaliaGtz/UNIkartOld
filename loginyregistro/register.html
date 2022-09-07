@@ -6,14 +6,15 @@
         <meta name="viewport" content="height=device-height, initial-scale=1.0">
         <title>Registro - UNIkart</title>
         <link rel="stylesheet" href="css/register.css">
+        <script src="js/validarRegister.js"></script>
     </head>
     
     <body>
-        <script src="js/validarRegister.js"></script>
+        
         <div class="register-box">
             <img class="avatar" src="../ExtraDocs/UK2.png" alt="Logo de Olympus">
             <h1>Regístrate aquí</h1>
-            <form action="" class="registrote" id="registrote">
+            <form action="" class="registrote" id="registrote" onclick="validarespacios()">
                 
                
             
@@ -54,13 +55,11 @@
                 <input type="radio" name="tipo_de_usuario" value="cliente"> Cliente<br>
 
                 <input type="radio" name="tipo_de_usuario" value="vendedor"> Vendedor
-                
-            
                 <div>
+
                     <input type="button" value="Registrarse" onclick="validarespacios()">
+
                 </div>
-                        
-                
                 <nav>
                     <a href="login.html">Ya estás registrado?</a>
                 </nav>
