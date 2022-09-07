@@ -313,3 +313,19 @@ input.src{
 .categorias h3{
     padding: 25px;
 }
+
+/*Responsive*/
+@media screen and (max-width: 765px){
+    .categorias .card{
+        width: 120px;
+        height: 120px;
+        margin: 20px;
+    }
+    .categorias img{
+        width: 100px;
+        height: 100px;
+    }
+    .card h3{
+        padding: 25px 10px;
+    }
+}
