@@ -165,7 +165,7 @@ function Modal(titulo, contenido, idioma) {
     ModalData.innerHTML = '<div id="modal-back"></div><div class="newModal"><div id="modal-new"><h3>'
     + titulo +'</h3><form id="mc">'
     + contenido +'</form><div id="modButtons"><a id="mclose" href="#">'
-    + bc +'</a>' 
+    + '<i id="close" class="fa-solid fa-circle-xmark"></i>' +'</a>' 
     + boton + '</div></div></div>';
     document.querySelector(".newModal").style.height = document.getElementById("mc").offsetHeight + 150 + 'px';
     document.getElementById('mclose').onclick = function(){ 
