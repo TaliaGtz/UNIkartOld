@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UNIkart - Producto</title>
     <link rel="stylesheet" href="Producto.css">
+    <link rel="stylesheet" href="../AddModal/Cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://kit.fontawesome.com/29079834be.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/7e5b2d153f.js" crossorigin="anonymous"></script>
     <link rel="icon" href="../ExtraDocs/Ukart.png">
@@ -13,20 +15,25 @@
 <body>
     <header class="header">
         <nav class="nav">
-            <img src="../ExtraDocs/UK.png" height="70" width="70" class="logo">
+            <a href="../Home/Home.html"><img src="../ExtraDocs/UK.png" height="70" width="70" class="logo"></a>
             <div class="empty"></div>
             <div class="empty"></div>
             <div class="empty"></div>
             <div class="empty"></div>
             <div class="empty"></div>
             <ul id="navList" class="nav-menu" >
-                <a href="https://google.mx" class="nav-menu-link nav-link"><li class="nav-menu-item">Acerca de</li></a>
-                <a href="../ExtraDocs/Contact.html" class="nav-menu-link nav-link"><li class="nav-menu-item">Contacto</li></a>
-                <a href="../ExtraDocs/Blog.html" class="nav-menu-link nav-link"><li class="nav-menu-item">Blog</li></a>
-                <a href="../ExtraDocs/FAQ.html" class="nav-menu-link nav-link"><li class="nav-menu-item">Ayuda</li></a>
-                <a href="#" class="nav-menu-link nav-link"><li class="nav-menu-item liSpBtns" id="register">Registrarse</li></a>
+                <a href="../Home/Home.html" class="nav-menu-link nav-link"><li class="nav-menu-item">Home</li></a>
+                <a href="../UserPerfil/UserPerfil.html" class="nav-menu-link nav-link"><li class="nav-menu-item">Mi Perfil</li></a>
+                <a href="../WishList/WishList.html" class="nav-menu-link nav-link"><li class="nav-menu-item">Wishlists</li></a>
+                <a href="../ExtraDocs/FAQ.html" class="nav-menu-link nav-link"><li class="nav-menu-item">Consulta de pedidos</li></a>
+                <a href="../ExtraDocs/FAQ.html" class="nav-menu-link nav-link"><li class="nav-menu-item">Agregar Productos</li></a>
+                <a href="../ExtraDocs/FAQ.html" class="nav-menu-link nav-link"><li class="nav-menu-item">Consulta de ventas</li></a>
+                <a href="../ExtraDocs/FAQ.html" class="nav-menu-link nav-link"><li class="nav-menu-item">Agregar Categoría</li></a>
             </ul>  
-            <button id="bars" class="nav-toggle"><i id="iBars" class="fas fa-bars"></i></button>
+            <div class="btns">
+                <button id="cart" class="cart"><i class="fa-solid fa-cart-shopping"></i></button>
+                <button id="bars" class="nav-toggle"><i id="iBars" class="fas fa-bars"></i></button>
+            </div>
         </nav>
     </header>
 
@@ -37,15 +44,18 @@
 
         <!-- sección de Producto -->
 
-        <section id="contenido">
+        <section id="contenidoImg">
             <img src="../ExtraDocs/chilaquiles.jpg" class="productImg">
             <div class="description">
-                <p id="productName">Nombre</p>
-                <p>Precio/cotización</p>
+                <p id="productName">Chilaquiles</p>
+                <p>Valoración</p>
+                <p>Precio/<a id="cotiz" href="../WishList/WishList.html">Cotización</a></p>
                 <p>Categoría</p>
                 <d>Disponibilidad</d>
-                <p>Descripción Descripción Descripción Descripción Descripción</p>
-                <p>Valoración</p>
+                <p>(Descripción)Los famosos chilaquiles en la salsa que mejor se acople a tu gusto.</p>
+                <a href="../WishList/WishList.html"><i id="add" class="fa-solid fa-heart-circle-plus"></i></a>
+                <a href="#" onclick="addCart()"><i id="addCart" class="fa-solid fa-cart-plus"></i></a>
+                <!--<i id="add" class="fa-solid fa-circle-plus"></i>-->
             </div>
         </section>
 
@@ -57,16 +67,28 @@
             <h1>Comentarios</h1>
             
             <section id="publicacion">
-                <div id="commentBox" contenteditable="true" dir="auto" class="commentBox" placeholder="Agrega un comentario..."></div>
+                <div id="commentBoxP" contenteditable="true" dir="auto" class="commentBoxP" placeholder="Agrega un comentario..."></div>
                 <br>
-                    <div class="cat">Categoría: (No editable)
+                <!--<div class="cat">Categoría: (No editable)
                     <input type="radio" class="catRB" name="genero" id="IDCat1"/> Categoría 1
                     <input type="radio" class="catRB" name="genero" id="IDCat2"/> Categoría 2
                     <input type="radio" class="catRB" name="genero" id="IDCat3"/> Categoría 3
-                    </div>
-                <br>
-                <button type="button" id="publicar" class="button">Publicar</button>
+                </div>
+                <br>-->
+                <div class="valoracion">
+                    <input type="radio" name="estrellas" id="rate5" value="5">
+                    <label for="rate5" class="fas fa-star"></label>
+                    <input type="radio" name="estrellas" id="rate4" value="4">
+                    <label for="rate4" class="fas fa-star"></label>
+                    <input type="radio" name="estrellas" id="rate3" value="3">
+                    <label for="rate3" class="fas fa-star"></label>
+                    <input type="radio" name="estrellas" id="rate2" value="2">
+                    <label for="rate2" class="fas fa-star"></label>
+                    <input type="radio" name="estrellas" id="rate1" value="1">
+                    <label for="rate1" class="fas fa-star"></label>
+                </div>
                 <input type="date" id="datepkd" class="datepkd" value="2022-01-01">
+                <button type="button" id="publicar" class="button">Publicar</button>
             </section>
 
             <section id="contenido">
@@ -90,6 +112,34 @@
         </div>
 
         <!-- fin sección de Comentarios -->
+
+        <!--Recomendaciones y productos similares-->
+        <div class="prodSimi">
+            <h3>Productos similares</h3>
+            <div class="prodSimi">
+                <div class="card">
+                    <img src="../ExtraDocs/Soup.png" width="150px" height="150px">
+                    <h4>Producto</h4>
+                    <p>Precio/Cotización</p>
+                    <br>
+                    <a href="../Producto/Producto.html">Leer más</a>
+                </div>
+                <div class="card">
+                    <img src="../ExtraDocs/Soup.png" width="150px" height="150px">
+                    <h4>Producto</h4>
+                    <p>Precio/Cotización</p>
+                    <br>
+                    <a href="../Producto/Producto.html">Leer más</a>
+                </div>
+                <div class="card">
+                    <img src="../ExtraDocs/Soup.png" width="150px" height="150px">
+                    <h4>Producto</h4>
+                    <p>Precio/Cotización</p>
+                    <br>
+                    <a href="../Producto/Producto.html">Leer más</a>
+                </div>
+            </div>
+        </div>
 
         <!-- sección de footer -->
 

@@ -93,8 +93,17 @@ nav ul li:hover{
     cursor: pointer;
 }
 
+.btns{
+    display: flex;
+}
+
 /*Responsive*/
-@media screen and (max-width: 960px){   /*843 y 960*/
+@media screen and (max-width: 1920px){
+    #navList{
+        display: flex;
+    }
+}
+@media screen and (max-width: 1384px){   /*843 y 960*/
     #navList{
         display: none;
     }
@@ -206,16 +215,20 @@ nav ul li:hover{
     }
 }
 
-@media screen and (max-width: 364px){
+@media screen and (max-width: 390px){
     .footer{
         grid-row: 13/-1;
+    }
+    #publicacion{
+        width: 100%;
+        background-color: firebrick;
     }
 }
 
 /*grid*/
 .grid{
     /*height: 85vh;*/
-    height: 105vh;
+    height: 205vh;  /*105*/
     width: 100%;
     /*max-width: 1200px;*/
     margin: auto;
@@ -223,7 +236,7 @@ nav ul li:hover{
     /*box-shadow: 0 0 30px -10px rgba(138, 135, 125, 0.5);*/
     display: grid;
     grid-template-columns: repeat(14, 1fr);
-    grid-template-rows: repeat(15, 1fr);
+    grid-template-rows: repeat(23, 1fr);    /*15*/
     overflow: hidden;
     z-index: 0;
 }
@@ -241,7 +254,7 @@ nav ul li:hover{
     margin: 20px;
 }
 
-#contenido{
+#contenidoImg{
     grid-row: 2/12;
     grid-column: 1/14;
     overflow: hidden;
@@ -285,11 +298,38 @@ nav ul li:hover{
     padding: 10px 20px 0px 20px;
 }
 
+#add{
+    font-size: 30px;
+    float: right;
+    position: relative;
+    top: -120px;
+    cursor: pointer;
+    color: #2c1507;
+}
+#add:hover{
+    color: #67432e;
+}
+#addCart{
+    font-size: 30px;
+    float: right;
+    position: relative;
+    top: 47px;
+    right: -32px;
+    cursor: pointer;
+    color: #2c1507;
+}
+#addCart:hover{
+    color: #67432e;
+}
+
 /* sección de comentarios */
 
 .comments{
-    grid-row: 7/12;
+    grid-row: 5/-8;
     grid-column: 2/-2;
+    margin-top: 30px;
+    overflow: hidden;
+    /*max-height: 800px;*/
 }
 
 .container{
@@ -302,10 +342,10 @@ nav ul li:hover{
     float: left;
     width: calc(80% - 80px);
     min-height: 50px;
-    background: rgb(219, 172, 172);
+    background: rgba(239, 88, 61, 0.632);
     padding: 20px;
     border-radius: 7px;
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
 #publicacion p{
@@ -316,7 +356,7 @@ nav ul li:hover{
     content:attr(placeholder)
 }
 
-.commentBox{ 
+.commentBoxP{ 
     color: snow;
     font-size: 17px; 
     line-height: 1.5em;
@@ -333,6 +373,23 @@ nav ul li:hover{
 
 [contenteditable] {
     outline: 0px solid transparent;
+}
+
+.valoracion input{
+    display: none;
+}
+
+.valoracion label{
+    font-size: 30px;
+    color:#444;
+    float: right;
+    transition: all 0.2s ease;;
+}
+
+div.valoracion label:hover,
+div.valoracion label:hover ~ label,
+div.valoracion input:checked ~ label {
+    color: #fd4;
 }
 
 .button{
@@ -386,7 +443,7 @@ nav ul li:hover{
     width: calc(80% - 80px);
     min-height: 500px;
     background: transparent;
-    padding: 25px;
+    padding: 10px 25px;
 }
 
 .article{
@@ -455,37 +512,66 @@ nav ul li:hover{
 }
 
 /* fin de sección de comentarios */
+/*Productos similares*/
+.prodSimi{
+    grid-row: -8/-4;
+    grid-column: 2/-2;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: center;*/
+    margin: auto;
+}
+
+.prodSimi .card{
+    width: 330px;
+    height: 240px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.527);
+    /*overflow: hidden;*/
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s ease;
+    color: #2c1507;
+    background-color: white;
+}
+
+.prodSimi .card:hover{
+    transform: translate(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.527);
+}
 
 .other{
-    grid-row: 12/-1;
+    grid-row: -4/-1;
     grid-column: 1/-1;
     background-color: floralwhite;
 }
 
 .footer{
-    grid-row: 14/-1;
+    grid-row: -2/-1;
     grid-column: 1/-1;
     background-color: black;
     width: 100%;
 }
 
 .imgFtr{
-    grid-row: 14/15;
+    padding-top: 40px;
+    grid-row: -3/-2;
     grid-column: 2/4;
     /*background-color: thistle;*/
 }
-
 .textContent{
-    grid-row: 14/15;
+    padding-top: 40px;
+    grid-row: -3/-2;
     grid-column: -10/-5;
     align-self: center;
     /*background-color: thistle;*/
     color: floralwhite;
     list-style: none;
 }
-
 .socialMedia{
-    grid-row: 14/15;
+    padding-top: 40px;
+    grid-row: -3/-2;
     grid-column: -4/-2;
     align-self: center;
     /*background-color: thistle;*/
@@ -495,12 +581,12 @@ nav ul li:hover{
 
 .space{
     grid-column: 1/2;
-    grid-row: 1/12;
+    grid-row: 1/-1;
     background-color: floralwhite;
 }
 
 .space2{
     grid-column: -2/-1;
-    grid-row: 1/12;
+    grid-row: 1/-1;
     background-color: floralwhite;
 }

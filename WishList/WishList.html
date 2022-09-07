@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UNIkart - WishList</title>
     <link rel="stylesheet" href="WishList.css">
+    <link rel="stylesheet" href="../AddModal/Cart.css">
+    <link rel="stylesheet" href="../Alert/alert.css">
+    <link rel="stylesheet" href="../AddModal/AddList.css">
     <script src="https://kit.fontawesome.com/29079834be.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/7e5b2d153f.js" crossorigin="anonymous"></script>
     <link rel="icon" href="../ExtraDocs/Ukart.png">
@@ -13,21 +16,25 @@
 <body>
     <header class="header">
         <nav class="nav">
-            <img src="../ExtraDocs/UK.png" height="70" width="70" class="logo">
+            <a href="../Home/Home.html"><img src="../ExtraDocs/UK.png" height="70" width="70" class="logo"></a>
             <div class="empty"></div>
             <div class="empty"></div>
             <div class="empty"></div>
             <div class="empty"></div>
             <div class="empty"></div>
-            <button type="button" id="regSpBtns" id="SpBtns" class="SpBtns">Registrarse</button>
             <ul id="navList" class="nav-menu" >
-                <a href="https://google.mx" class="nav-menu-link nav-link"><li class="nav-menu-item">Acerca de</li></a>
-                <a href="../ExtraDocs/Contact.html" class="nav-menu-link nav-link"><li class="nav-menu-item">Contacto</li></a>
-                <a href="../ExtraDocs/Blog.html" class="nav-menu-link nav-link"><li class="nav-menu-item">Blog</li></a>
-                <a href="../ExtraDocs/FAQ.html" class="nav-menu-link nav-link"><li class="nav-menu-item">Ayuda</li></a>
-                <a href="#" class="nav-menu-link nav-link"><li class="nav-menu-item liSpBtns" id="register">Registrarse</li></a>
-            </ul>  
-            <button id="bars" class="nav-toggle"><i id="iBars" class="fas fa-bars"></i></button>
+                <a href="../Home/Home.html" class="nav-menu-link nav-link"><li class="nav-menu-item">Home</li></a>
+                <a href="../UserPerfil/UserPerfil.html" class="nav-menu-link nav-link"><li class="nav-menu-item">Mi Perfil</li></a>
+                <a href="../WishList/WishList.html" class="nav-menu-link nav-link"><li class="nav-menu-item">Wishlists</li></a>
+                <a href="../ExtraDocs/FAQ.html" class="nav-menu-link nav-link"><li class="nav-menu-item">Consulta de pedidos</li></a>
+                <a href="../ExtraDocs/FAQ.html" class="nav-menu-link nav-link"><li class="nav-menu-item">Agregar Productos</li></a>
+                <a href="../ExtraDocs/FAQ.html" class="nav-menu-link nav-link"><li class="nav-menu-item">Consulta de ventas</li></a>
+                <a href="../ExtraDocs/FAQ.html" class="nav-menu-link nav-link"><li class="nav-menu-item">Agregar Categoría</li></a>
+            </ul>
+            <div class="btns">
+                <button id="cart" class="cart"><i class="fa-solid fa-cart-shopping"></i></button>
+                <button id="bars" class="nav-toggle"><i id="iBars" class="fas fa-bars"></i></button>
+            </div>
         </nav>
     </header>
 

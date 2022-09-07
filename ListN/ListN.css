@@ -115,8 +115,17 @@ nav ul li:hover{
     cursor: pointer;
 }
 
+.btns{
+    display: flex;
+}
+
 /*Responsive*/
-@media screen and (max-width: 960px){   /*843 y 960*/
+@media screen and (max-width: 1920px){
+    #navList{
+        display: flex;
+    }
+}
+@media screen and (max-width: 1384px){   /*843 y 960*/
     #navList{
         display: none;
     }
@@ -326,6 +335,24 @@ h1{
 
 .article{
     padding: 10px 20px 0px 20px;
+}
+
+.file{
+    clip-path: circle(50% at 50% 50%);
+    float: left;
+    margin: 10px;
+}
+
+#view{
+    font-size: 30px;
+    float: right;
+    position: relative;
+    top: -52px;
+    cursor: pointer;
+    color: #2c1507;
+}
+#view:hover{
+    color: #67432e;
 }
 
 .other{

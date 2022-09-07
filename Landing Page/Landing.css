@@ -47,7 +47,6 @@ a{
     background-position: 85% top;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     animation: show 1.5s cubic-bezier(.78,0,.21,1.01) forwards;
-   
 }
 
 .grid_texts{

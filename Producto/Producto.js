@@ -3,6 +3,7 @@ const navMenu = document.querySelector(".nav-menu");
 var num = 2;
 var i = 0;
 var j = 0;
+
 navToggle.addEventListener("click", ()=>{
     //navMenu.classList.toggle("nav-menu_visible");
     
@@ -20,15 +21,15 @@ navToggle.addEventListener("click", ()=>{
 
 function toggle(num){
     if(num == 1){
-        document.getElementById("navList").style = "display: block";
-        document.getElementById("regSpBtns").style = "height: 80px";
+        document.getElementById("navList").style = "display: flex";
+        /*document.getElementById("regSpBtns").style = "height: 80px";*/
         document.getElementById("iBars").classList.add("moveBars");
         document.getElementById("iBars").classList.remove("resetBars");
     }
 
     if(num == 2){
         document.getElementById("navList").style = "display: none";
-        document.getElementById("regSpBtns").style = "height: 80px";
+        /*document.getElementById("regSpBtns").style = "height: 80px";*/
         document.getElementById("iBars").classList.add("resetBars");
         document.getElementById("iBars").classList.remove("moveBars");
     }
@@ -41,8 +42,74 @@ $(window).on("load",function checkPosition(){
     }
 });
 
+/*Cart*/
+$("#cart").click(function(){
+    Modal('Carrito de compras', 
+    '<div class="user">'+
+        '<img src="../ExtraDocs/Soup.png" height="70" width="70" id="image" alt="Imagen" class="file">'+
+        '<p class="productName">Producto</p>'+
+        '<i class="fa-solid fa-square-minus quantity"></i>'+
+        '<p class="quantityNum">1</p>'+
+        '<i class="fa-solid fa-square-plus quantity"></i>'+
+    '</div>'+
+    '<div class="user">'+
+        '<img src="../ExtraDocs/Soup.png" height="70" width="70" id="image" alt="Imagen" class="file">'+
+        '<p class="productName">Producto</p>'+
+        '<i class="fa-solid fa-square-minus quantity"></i>'+
+        '<p class="quantityNum">1</p>'+
+        '<i class="fa-solid fa-square-plus quantity"></i>'+
+    '</div>',   
+    'Cerrar');
+});
+
+function addCart(){
+    Modal('Carrito de compras', 
+    '<div class="user">'+
+        '<img src="../ExtraDocs/Soup.png" height="70" width="70" id="image" alt="Imagen" class="file">'+
+        '<p class="productName">Producto</p>'+
+        '<i class="fa-solid fa-square-minus quantity"></i>'+
+        '<p class="quantityNum">1</p>'+
+        '<i class="fa-solid fa-square-plus quantity"></i>'+
+    '</div>'+
+    '<div class="user">'+
+        '<img src="../ExtraDocs/Soup.png" height="70" width="70" id="image" alt="Imagen" class="file">'+
+        '<p class="productName">Producto</p>'+
+        '<i class="fa-solid fa-square-minus quantity"></i>'+
+        '<p class="quantityNum">1</p>'+
+        '<i class="fa-solid fa-square-plus quantity"></i>'+
+    '</div>',   
+    'Cerrar');
+};
+
+/*Modal*/
+function borrarModal(id) {
+    var elem = document.getElementById(id); 
+    return elem.parentNode.removeChild(elem);
+}
+
+function Modal(titulo, contenido, idioma) {
+    var padre = document.createElement('div');
+    padre.id = 'modal';
+    document.body.appendChild(padre);
+    var bc = idioma ? idioma : 'Aceptar';
+    var ModalData = document.getElementById("modal");
+    var boton = "";
+    ModalData.innerHTML = '<div id="modal-back"></div><div class="newModal"><div id="modal-new"><h3>'
+    + titulo +'</h3><form id="mc">'
+    + contenido +'</form><div id="modButtons"><a id="mclose" href="#">'
+    + '<i id="close" class="fa-solid fa-circle-xmark"></i>' +'</a>' 
+    + boton + '</div></div></div>';
+    document.querySelector(".newModal").style.height = document.getElementById("mc").offsetHeight + 150 + 'px';
+    document.getElementById('mclose').onclick = function(){ 
+        borrarModal('modal'); 
+    };
+    document.getElementById('modal-back').onclick = function(){ 
+        borrarModal('modal'); 
+    }
+}
+
 ///////////////////////////////////////
-{
+
     var i = 0;
     var iCat = 1;
     var valCat;
@@ -70,7 +137,7 @@ $(window).on("load",function checkPosition(){
     var yearAux;
     var div;
     var divCB
-}
+
 
 const debounce = (fn) => {
     let frame;
@@ -93,8 +160,8 @@ $("#publicar").click(function(){
     
     var text = document.getElementById("commentBox");   //Toma el texto del commentBox
     date = document.querySelector('input[type="date"]');   //Toma el texto del DateTimePicker
-    var selCategory = RBSelected();
-    if(selCategory == "Categoría 1" || selCategory == "Categoría 2" || selCategory == "Categoría 3"){
+    //var selCategory = RBSelected();
+    //if(selCategory == "Categoría 1" || selCategory == "Categoría 2" || selCategory == "Categoría 3"){
         //console.log(text.innerHTML);
         //console.log(date.value);
         //console.log(date.value);
@@ -117,29 +184,29 @@ $("#publicar").click(function(){
 
         }
 
-        displayPost(text.innerHTML, date.value, selCategory, pags);
+        displayPost(text.innerHTML, date.value, pags);
         savePost(text.innerHTML);
-        //displayDate(i, date.value, msg2);
+        //displayDate(i, date.value, msg2);selCategory
         
         document.getElementById("commentBox").innerHTML = "";     //Limpia el commentBox
         document.getElementById("datepkd").value = "2022-01-01";     //Limpia el DateTimePicker
-        document.getElementById("IDCat1").checked = false;     //Limpia los RadioButtons
+        /*document.getElementById("IDCat1").checked = false;     //Limpia los RadioButtons
         document.getElementById("IDCat2").checked = false;     //Limpia los RadioButtons
-        document.getElementById("IDCat3").checked = false;     //Limpia los RadioButtons
+        document.getElementById("IDCat3").checked = false;     //Limpia los RadioButtons*/
         i = i + 1;
-        iCat = iCat + 1;
+        //iCat = iCat + 1;
 
-    }else{
+    //}//else{
         /*if(date.value == "2022-01-01"){
             alert("La categoría es obligatoria");
         }*/
-        msj('TestBlog', 'La categoría es obligatoria', 'Cerrar');
+        //msj('TestBlog', 'La categoría es obligatoria', 'Cerrar');
         //alert("La categoría es obligatoria");
-    }
+    //}
 
 });
-
-function displayPost(msgText, date, category, pag) {
+//category
+function displayPost(msgText, date, pag) {
     var html = document.querySelector(`#pag${pag}`);
 
     panel = document.createElement('article');
@@ -151,13 +218,13 @@ function displayPost(msgText, date, category, pag) {
     var name = document.createElement('h2');
     name.textContent = "andr3_c02";
     panel.appendChild(name);
-
+    /*
     var msgRB = document.createElement('p');
     msgRB.setAttribute('id', 'IDCatArt' + iCat);
     msgRB.setAttribute('class', 'CatIDC');
     msgRB.setAttribute('value', valCat);
     msgRB.textContent = category;
-    panel.appendChild(msgRB);
+    panel.appendChild(msgRB);*/
     
     msg = document.createElement('p');
     msg.setAttribute('id', 'postID' + i);
@@ -348,7 +415,7 @@ function ShowSelected(num){
     }
     
 }
-
+/*
 function filtrar(num){
 
     const article0 = document.getElementById("article0");
@@ -433,7 +500,7 @@ function desfiltrar(num){
         return;
     }
 
-    /*var totalPags = pags;
+    var totalPags = pags;
 
     for(var r = 1; r <= totalPags; r++){
         var idArt = "pag" + (r);
@@ -444,7 +511,7 @@ function desfiltrar(num){
         var idArt = "pag" + (r);
         document.getElementById(idArt).style = 'display: block';
     }
-    */
+    
     for(var r = 0; r <= i; r++){
         if(r == i)
         break;
@@ -476,9 +543,10 @@ function desfiltrar(num){
             document.getElementById(cleaned).style = 'display: block';
         }
     }
-    */
-}
+    *
+}*/
 
+/*
 function RBSelected(){
     if(document.getElementById('IDCat1').checked){
         valCat = 1;
@@ -493,7 +561,7 @@ function RBSelected(){
         return "Categoría 3";
     }
 }
-
+*/
 function borrar(id) {
     var elem = document.getElementById(id); 
     return elem.parentNode.removeChild(elem);
@@ -538,7 +606,7 @@ function savePost(Text){
     msg.textContent = Text;
     html.appendChild(msg);
 }
-
+/*
 function busqueda(){
     var list;
     var buscar = document.getElementById("search").value.toUpperCase();
@@ -555,7 +623,7 @@ function busqueda(){
     }
     
 }
-
+*/
 function limpiar(){
     for(var u = 0; u < i; u++){
         //alert("Yup:" + u)
@@ -563,3 +631,4 @@ function limpiar(){
         document.getElementById("search").value = "";
     }
 }
+

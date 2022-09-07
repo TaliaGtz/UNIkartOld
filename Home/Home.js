@@ -39,42 +39,6 @@ $(window).on("load",function checkPosition(){
 
 ////////////////////////////////////////////////////////////////
 
-var reader;
-var input2;
-var texto;
-//var alm;
-function readURL(input) {
-    input2 = input;
-    if (input.files && input.files[0]) { //Revisamos que el input tenga contenido
-      reader = new FileReader(); //Leemos el contenido
-      
-      reader.onload = function(e) { //Al cargar el contenido lo pasamos como atributo de la imagen de arriba
-        $('#image').attr('src', e.target.result);
-        
-      }
-      
-      reader.readAsDataURL(input.files[0]);
-    }
-}
-  
-$("#userPic").change(function() { //Cuando el input cambie (se cargue un nuevo archivo) se va a ejecutar de nuevo el cambio de imagen y se verá reflejado.
-    console.log("sfd");
-    readURL(this);
-});
-
-function msj(titulo, contenido, idioma) {
-    var padre = document.createElement('div');
-    padre.id = 'modal';
-    document.body.appendChild(padre);
-    var bc = idioma ? idioma : 'Aceptar';
-    var ModalData = document.getElementById("modal");
-    var boton = "";
-    ModalData.innerHTML = '<div id="modal-back"></div><div class="modal"><div id="modal-c"><h3>'+titulo+'</h3><span id="mc">'+contenido+'</span><div id="buttons"><a id="mclose" href="#">'+bc+'</a>'+boton+'</div></div></div>';
-    document.querySelector(".modal").style.height = document.getElementById("mc").offsetHeight+100 + 'px';
-    document.getElementById('mclose').onclick=function(){ borrar('modal'); };
-    document.getElementById('modal-back').onclick = function(){ borrar('modal'); }
-}
-
 /*Cart*/
 $("#cart").click(function(){
     Modal('Carrito de compras', 
@@ -138,5 +102,48 @@ function Modal(titulo, contenido, idioma) {
     };
     document.getElementById('modal-back').onclick = function(){ 
         borrarModal('modal'); 
+    }
+}
+
+////////////////////////////////////////////////////////////////
+/*Buscador*/
+
+//bars_search = document.getElementById("box");
+cover = document.getElementById("coverCtnSearch");
+inputSearch = document.getElementById("inputSearch");
+boxSearch = document.getElementById("boxSearch");
+
+document.getElementById("inputSearch").addEventListener("click", mostrar_buscador);
+document.getElementById("coverCtnSearch").addEventListener("click", ocultar_buscador);
+
+function mostrar_buscador(){
+    cover.style.display = "block";
+}
+
+function ocultar_buscador(){
+    cover.style.display = "none";
+    boxSearch.style.display = "none";
+    inputSearch.value = "";
+}
+
+document.getElementById("inputSearch").addEventListener("keyup", buscador_interno);
+
+function buscador_interno(){
+    filter = inputSearch.value.toUpperCase();
+    li = boxSearch.getElementsByTagName("li");
+
+    for(i = 0; i < li.length; i++){
+        a = li[i].getElementsByTagName("a")[0];
+        textValue = a.textContent || a.innerText;
+
+        if(textValue.toUpperCase().indexOf(filter) > -1){
+            li[i].style.display = "";
+            boxSearch.style.display = "block";
+            if(inputSearch.value === ""){
+                boxSearch.style.display = "none";
+            }
+        }else{
+            li[i].style.display = "none";
+        }
     }
 }
