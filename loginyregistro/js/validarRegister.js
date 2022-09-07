@@ -14,8 +14,18 @@ if(names.leght==0 || /^\s+$/.test(names)){
 alert("Inserte nombre");
 }
 
+if(lastnames.leght==0 || /^\s+$/.test(lastnames)){
+  alert("Inserte apellidos");
+  }
 
+if(birthday.leght==0 || /^\s+$/.test(birthday)){
+  alert("Inserte día de nacimiento");
+  }
 
+if(email.leght==0 || /^\s+$/.test(email)){
+    alert("Inserte correo electrónico");
+    }
+  
 
 
 
