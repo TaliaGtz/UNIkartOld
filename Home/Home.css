@@ -283,6 +283,14 @@ input.src{
     display: none;
 }
 
+.plus{
+    font-size: 40px;
+    color: #2c1507;
+    padding-top: 180px;
+    position: fixed;
+    right: 0;
+}
+
 /*Categorias*/
 .categorias{
     display: flex;

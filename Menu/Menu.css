@@ -21,6 +21,10 @@ body{
     min-height: 100vh;
 }
 
+.body{
+    width: 100%;
+}
+
 .areas{
     /*margin: 20px;*/
     margin-top: 80px;
@@ -61,8 +65,12 @@ h2{
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
 }
 
-.body{
-    width: 100%;
+.plus{
+    float: right;
+    font-size: 35px;
+    color: #2c1507;
+    padding-right: 15px;
+    transform: translate(0%, -20%);
 }
 
 /*Menú*/
@@ -134,4 +142,7 @@ h2{
     .liga{
         margin-top: 60px;
     }
+    /*#liga{
+        width: 100px;
+    }*/
 }
