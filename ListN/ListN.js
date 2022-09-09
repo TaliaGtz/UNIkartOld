@@ -164,10 +164,10 @@ function Modal(titulo, contenido, idioma) {
     var boton = "";
     ModalData.innerHTML = '<div id="modal-back"></div><div class="newModal"><div id="modal-new"><h3>'
     + titulo +'</h3><form id="mc">'
-    + contenido +'</form><div id="modButtons"><a id="mclose" href="#">'
+    + contenido +'</form><div><button id="buy"><a id="buyT" href="../SisPago/SisPago.html">Ir a pagar</a></button></div><div id="modButtons"><a id="mclose" href="#">'
     + '<i id="close" class="fa-solid fa-circle-xmark"></i>' +'</a>' 
     + boton + '</div></div></div>';
-    document.querySelector(".newModal").style.height = document.getElementById("mc").offsetHeight + 150 + 'px';
+    document.querySelector(".newModal").style.height = document.getElementById("mc").offsetHeight + 200 + 'px';
     document.getElementById('mclose').onclick = function(){ 
         borrarModal('modal'); 
     };

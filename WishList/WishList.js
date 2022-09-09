@@ -203,7 +203,7 @@ function Modal(titulo, contenido, idioma) {
     + contenido
     + '<i id="close" class="fa-solid fa-circle-xmark"></i>' +'</a>' 
     + boton + '</div></div></div>';
-    document.querySelector(".newModal").style.height = document.getElementById("mc").offsetHeight + 150 + 'px';
+    document.querySelector(".newModal").style.height = document.getElementById("mc").offsetHeight + 200 + 'px';
     document.getElementById('mclose').onclick = function(){ 
         borrarModal('modal'); 
     };
