@@ -512,6 +512,7 @@ div.valoracion input:checked ~ label {
 }
 
 /* fin de sección de comentarios */
+
 /*Productos similares*/
 .prodSimi{
     grid-row: -8/-4;

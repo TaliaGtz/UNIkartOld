@@ -158,7 +158,7 @@ storeScroll();
 
 $("#publicar").click(function(){
     
-    var text = document.getElementById("commentBox");   //Toma el texto del commentBox
+    var text = document.getElementById("commentBoxP");   //Toma el texto del commentBox
     date = document.querySelector('input[type="date"]');   //Toma el texto del DateTimePicker
     //var selCategory = RBSelected();
     //if(selCategory == "Categoría 1" || selCategory == "Categoría 2" || selCategory == "Categoría 3"){
@@ -188,7 +188,7 @@ $("#publicar").click(function(){
         savePost(text.innerHTML);
         //displayDate(i, date.value, msg2);selCategory
         
-        document.getElementById("commentBox").innerHTML = "";     //Limpia el commentBox
+        document.getElementById("commentBoxP").innerHTML = "";     //Limpia el commentBox
         document.getElementById("datepkd").value = "2022-01-01";     //Limpia el DateTimePicker
         /*document.getElementById("IDCat1").checked = false;     //Limpia los RadioButtons
         document.getElementById("IDCat2").checked = false;     //Limpia los RadioButtons
@@ -216,7 +216,7 @@ function displayPost(msgText, date, pag) {
     html.appendChild(panel);
 
     var name = document.createElement('h2');
-    name.textContent = "andr3_c02";
+    name.textContent = "User";
     panel.appendChild(name);
     /*
     var msgRB = document.createElement('p');

@@ -37,14 +37,6 @@ h2{
     justify-content: space-between;
 }
 
-.plus{
-    float: right;
-    font-size: 40px;
-    color: #2c1507;
-    padding-top: 15px;
-    padding-right: 15px;
-}
-
 /*Categorias*/
 .categorias{
     display: flex;
