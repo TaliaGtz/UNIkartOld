@@ -162,7 +162,7 @@ $("#cart").click(function(){
         '<p class="quantityNum">1</p>'+
         '<i class="fa-solid fa-square-plus quantity"></i>'+
     '</div>'+
-    '</form><div id="modButtons"><a id="mclose" href="#">',   
+    '</form><div><button id="buy"><a id="buyT" href="../SisPago/SisPago.html">Ir a pagar</a></button></div><div id="modButtons"><a id="mclose" href="#">',   
     'Cerrar');
 });
 

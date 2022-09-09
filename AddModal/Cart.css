@@ -134,3 +134,15 @@ form{
     font-size: 30px;
     color: #428347;
 }
+
+#buy{
+    width: 100%;
+    background-color: rgba(255, 99, 71, 0.232);
+    padding: 10px;
+    border-color: transparent;
+    cursor: pointer;
+}
+#buyT{
+    color: #2c1507;
+    font-size: 15px;
+}
