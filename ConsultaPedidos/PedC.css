@@ -57,7 +57,7 @@ h2{
 
 .categorias .card{
     width: 100%;
-    height: 170px;
+    height: 120px;
     border-radius: 20px;
     position: relative;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.527);
@@ -71,7 +71,8 @@ h2{
 
 .card img{
     float: left;
-    margin-top: 10px;
+    margin-top: 6px;
+    margin-left: 6px;
 }
 
 .text{
@@ -95,7 +96,7 @@ h2{
 
 .categorias h3{
     padding: 25px;
-    padding-top: 70px;
+    padding-top: 45px;
     font-size: 25px;
 }
 
