@@ -117,16 +117,19 @@ payToggle.addEventListener("click", ()=>{
         document.getElementById("Efectivo").style = "display: block";
         document.getElementById("Tarjeta").style = "display: none";
         document.getElementById("PayPal").style = "display: none";
+        document.getElementById("pay").innerText = "Aceptar";
     }
     if(selCategory == 2){
         document.getElementById("Efectivo").style = "display: none";
         document.getElementById("Tarjeta").style = "display: block";
         document.getElementById("PayPal").style = "display: none";
+        document.getElementById("pay").innerText = "Pagar";
     }
     if(selCategory == 3){
         document.getElementById("Efectivo").style = "display: none";
         document.getElementById("Tarjeta").style = "display: none";
         document.getElementById("PayPal").style = "display: block";
+        document.getElementById("pay").innerText = "Pagar";
     }
 });
 

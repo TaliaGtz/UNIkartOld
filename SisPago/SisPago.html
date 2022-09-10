@@ -42,11 +42,21 @@
                     <h1>UNIkart</h1>
                     <h2>Orden de compra</h2>
                     <br><br>
-                    <p>Costo de los productos</p>
-                    <p>Propina</p>
-                    <p>Tarifa de servicio</p>
-                    <hr>
+                    <div class="nota">
+                        <div class="titles">
+                            <p>Costo de los productos</p>
+                            <p>Propina</p>
+                            <p>Tarifa de servicio</p>
+                        </div>
+                        <div class="costos">
+                            <p id="prod">$ 0.00</p>
+                            <!--<p>$ 0.00</p>-->
+                            <input type="number" id="prop" placeholder="0.00">
+                            <p>$ 0.00</p>
+                        </div>
+                    </div>
                     <p>Total a pagar</p>
+                    <p id="total" class="total">$ 0.00</p>
                     <br><br>
                     <h2>Información de pago</h2>
                     <br>
@@ -66,10 +76,16 @@
                         <input type="text">
                         <p>Número de tarjeta</p>
                         <input type="number">
+                        <div class="lab">
                         <p>Fecha de expiración</p>
-                        <input type="number">
-                        <p>CV</p>
-                        <input type="number">
+                        <p id="ccv">CCV</p>
+                        </div>
+                        <div class="date">
+                            <input type="number" class="month" placeholder="XX">
+                            <p>/</p>
+                            <input type="number" class="year" placeholder="XX">
+                            <input id="CCV" type="number" placeholder="XX">
+                        </div>
                     </div>
                     <div id="PayPal" class="PayPal" style="display: none;">
                         <p>Espacio para PayPal</p>
@@ -77,7 +93,7 @@
                     <br><br><br>
                 </div>
                 <div class="precio">
-                    <a href="#">Pagar</a>
+                    <a href="#" id="pay">Pagar</a>
                 </div>
             </div>
         </div>

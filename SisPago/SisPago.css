@@ -229,7 +229,7 @@ nav ul li:hover{
 }
 
 .presentacion{
-    height: 710px;
+    height: 650px;
     width: 70%;
     display: flex;
     margin: auto;
@@ -261,33 +261,10 @@ nav ul li:hover{
 .info p{
     font-size: 20px;
 }
-.precio{
-    background-color: #84b295;
-    width: 100%;
-    cursor: pointer;
-    text-align: center;
-    padding: 7px;
-    font-size: 20px;
-}
-.precio a{
-    color: aliceblue;
-}
-.tarjeta input{
-    background-color: #f0f8ff;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid #2c1507;
-    margin-bottom: 5px;
-    font-size: 20px;
-    width: 100%;
-}
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-input[type=number]{
-    -moz-appearance: textfield;
+
+.total{
+    float: right;
+    transform: translate(0, -28px);
 }
 
 .eleccion{
@@ -298,4 +275,75 @@ input[type=number]{
 }
 .eleccion input{
     margin-left: 5px;
+}
+
+.tarjeta input, .month, .year{
+    background-color: #f0f8ff;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #2c1507;
+    margin-bottom: 5px;
+    font-size: 20px;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.nota{
+    display: flex;
+    border-bottom: 1px solid #2c1507;
+    justify-content: space-between;
+}
+.titles{
+    width: 100%;
+}
+.costos{
+    /*transform: translate(113px, 0);*/
+    width: 30%;
+    text-align: right;
+}
+#prop{
+    text-align: right;
+    /*transform: translate(188px, -55px);*/
+    background-color: #f0f8ff;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #2c1507;
+    margin-bottom: 5px;
+    font-size: 20px;
+    width: 65%;
+}
+
+.lab, .date{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+#ccv{
+    margin-right: 40%;
+}
+.year{
+    margin-right: 10%;
+}
+#CCV{
+    margin-right: 30%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number]{
+    -moz-appearance: textfield;
+}
+
+.precio{
+    background-color: #84b295;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    padding: 7px;
+    font-size: 20px;
+}
+.precio a{
+    color: aliceblue;
 }
