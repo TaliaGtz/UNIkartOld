@@ -297,13 +297,11 @@ nav ul li:hover{
     width: 100%;
 }
 .costos{
-    /*transform: translate(113px, 0);*/
     width: 30%;
     text-align: right;
 }
 #prop{
     text-align: right;
-    /*transform: translate(188px, -55px);*/
     background-color: #f0f8ff;
     border: none;
     outline: none;
