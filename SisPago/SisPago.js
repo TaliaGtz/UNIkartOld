@@ -104,3 +104,46 @@ function Modal(titulo, contenido, idioma) {
         borrarModal('modal'); 
     }
 }
+
+////////////////////////////////////////////////////////////////
+var select = 2;
+var selCategory;
+/*Eleccion radio buttons*/
+if(selCategory == 1){
+    console.log(ef);
+    document.getElementById("Efectivo").style = "display: block";
+    document.getElementById("Tarjeta").style = "display: none";
+    document.getElementById("PayPal").style = "display: none";
+}
+if(selCategory == 2){
+    console.log(tar);
+    document.getElementById("Efectivo").style = "display: none";
+    document.getElementById("Tarjeta").style = "display: block";
+    document.getElementById("PayPal").style = "display: none";
+}
+if(selCategory == 3){
+    console.log(pp);
+    document.getElementById("Efectivo").style = "display: none";
+    document.getElementById("Tarjeta").style = "display: none";
+    document.getElementById("PayPal").style = "display: block";
+}
+
+const payToggle = document.querySelector("#eleccion");
+payToggle.addEventListener("click", ()=>{
+    selCategory = RBSelected();
+});
+
+function RBSelected(){
+    if(document.getElementById('efectivo').checked){
+        select = 1;
+        return 1;
+    }
+    if(document.getElementById('tarjeta').checked){
+        select = 2;
+        return 2;
+    }
+    if(document.getElementById('paypal').checked){
+        select = 3;
+        return 3;
+    }
+}
