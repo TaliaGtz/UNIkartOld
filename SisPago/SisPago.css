@@ -341,7 +341,6 @@ input[type=number]{
     text-align: center;
     padding: 7px;
     font-size: 20px;
-}
-.precio a{
+    border-color: transparent;
     color: aliceblue;
 }
