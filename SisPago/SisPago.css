@@ -275,9 +275,19 @@ nav ul li:hover{
 .tarjeta input{
     background-color: #f0f8ff;
     border: none;
+    outline: none;
     border-bottom: 1px solid #2c1507;
     margin-bottom: 5px;
     font-size: 20px;
+    width: 100%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number]{
+    -moz-appearance: textfield;
 }
 
 .eleccion{

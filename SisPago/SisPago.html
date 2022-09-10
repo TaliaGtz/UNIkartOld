@@ -36,7 +36,7 @@
         </header>
         
         <div class="presentacion">
-            <div class="img"><img id="buyImg" src="../ExtraDocs/chilaquiles.jpg"></div>
+            <div class="img"><img id="buyImg" src="../ExtraDocs/bolsa.png"></div>
             <div class="info">
                 <div class="texto">
                     <h1>UNIkart</h1>
@@ -51,15 +51,17 @@
                     <h2>Información de pago</h2>
                     <br>
                     <div id="eleccion" class="eleccion">
+                        <div class="empty"></div>
                         <label><input type="radio" name="pago" id="efectivo" value="cash">Efectivo </label> 
-                        <label><input type="radio" name="pago" id="tarjeta" value="card">Tarjeta </label>
+                        <label><input type="radio" name="pago" id="tarjeta" value="card" checked>Tarjeta </label>
                         <label><input type="radio" name="pago" id="paypal" value="payp">PayPal </label> 
+                        <div class="empty"></div>
                     </div>
                     <br>
-                    <div id="Efectivo" class="efectivo">
+                    <div id="Efectivo" class="efectivo" style="display: none;">
     
                     </div>
-                    <div id="Tarjeta" class="tarjeta">
+                    <div id="Tarjeta" class="tarjeta" style="display: block;">
                         <p>Nombre del propietario</p>
                         <input type="text">
                         <p>Número de tarjeta</p>
@@ -69,7 +71,7 @@
                         <p>CV</p>
                         <input type="number">
                     </div>
-                    <div id="PayPal" class="PayPal">
+                    <div id="PayPal" class="PayPal" style="display: none;">
                         <p>Espacio para PayPal</p>
                     </div>
                     <br><br><br>

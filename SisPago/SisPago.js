@@ -107,30 +107,27 @@ function Modal(titulo, contenido, idioma) {
 
 ////////////////////////////////////////////////////////////////
 var select = 2;
-var selCategory;
-/*Eleccion radio buttons*/
-if(selCategory == 1){
-    console.log(ef);
-    document.getElementById("Efectivo").style = "display: block";
-    document.getElementById("Tarjeta").style = "display: none";
-    document.getElementById("PayPal").style = "display: none";
-}
-if(selCategory == 2){
-    console.log(tar);
-    document.getElementById("Efectivo").style = "display: none";
-    document.getElementById("Tarjeta").style = "display: block";
-    document.getElementById("PayPal").style = "display: none";
-}
-if(selCategory == 3){
-    console.log(pp);
-    document.getElementById("Efectivo").style = "display: none";
-    document.getElementById("Tarjeta").style = "display: none";
-    document.getElementById("PayPal").style = "display: block";
-}
 
+/*Eleccion radio buttons*/
 const payToggle = document.querySelector("#eleccion");
 payToggle.addEventListener("click", ()=>{
+    var selCategory;
     selCategory = RBSelected();
+    if(selCategory == 1){
+        document.getElementById("Efectivo").style = "display: block";
+        document.getElementById("Tarjeta").style = "display: none";
+        document.getElementById("PayPal").style = "display: none";
+    }
+    if(selCategory == 2){
+        document.getElementById("Efectivo").style = "display: none";
+        document.getElementById("Tarjeta").style = "display: block";
+        document.getElementById("PayPal").style = "display: none";
+    }
+    if(selCategory == 3){
+        document.getElementById("Efectivo").style = "display: none";
+        document.getElementById("Tarjeta").style = "display: none";
+        document.getElementById("PayPal").style = "display: block";
+    }
 });
 
 function RBSelected(){
