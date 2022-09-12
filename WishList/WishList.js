@@ -42,7 +42,7 @@ $(window).on("load",function checkPosition(){
 $("#publicar").click(function(){
     Modal('Agregar Lista', 
     '<div class="user"><img src="../ExtraDocs/Menu.png" height="100" width="100" id="image" alt="Imagen" class="file"></div>' + 
-    '<div class="image"><label id="archivo" for="archivo">Cambiar imagen</label><input type="file" id="userPic" name="archivo"/></div>' + 
+    '<form runat="server" action class="image"><div class="image"><label id="archivo" for="archivo">Cambiar imagen</label><input type="file" id="userPic" name="archivo" onclick="read()"/></div></form>' + 
     '<p> Nombre de la lista: <input type="text" name="nombre" class="nombre" contenteditable="true" required/></p>' + 
     '<br>' + '<br>' + 
     '<p> Categoría: <input type="radio" name="Categoria" value="Categoría 1" required/> Categoría 1 <input type="radio" name="Categoria" value="Categoría 2" required/> Categoría 2 </p>' + 
@@ -51,7 +51,7 @@ $("#publicar").click(function(){
     '<br>' + '<br>' + 
     '<p>Descripción:</p>' + '<br>' + 
     '<div id="commentBox" contenteditable="true" dir="auto" class="commentBox" placeholder="Agrega un comentario..."></div>' +
-    '</form><div id="modButtons" onclick="agregar()"><a id="mclose" href="#">', 
+    '</div><div><button id="buy" onclick="agregar()">Agregar</button></div><div id="modButtons"><a id="mclose" href="#">', 
     'Aceptar');
 });
 
@@ -110,15 +110,7 @@ function agregar(){
     var hr = document.createElement('hr');
     divisor.appendChild(hr);
 
-    /*
-    var datmsg = document.createElement('input');
-    datmsg.setAttribute('type', 'date');
-    datmsg.setAttribute('id', 'dateID' + i);
-    datmsg.setAttribute('class', 'datepkdP');
-    //console.log(date);
-    datmsg.setAttribute('value', date);
-    datmsg.setAttribute('disabled', 'true');
-    divisor.appendChild(datmsg);*/
+    borrar('modal');
 }
 
 $("#eliminar").click(function(){
@@ -199,7 +191,7 @@ function Modal(titulo, contenido, idioma) {
     var ModalData = document.getElementById("modal");
     var boton = "";
     ModalData.innerHTML = '<div id="modal-back"></div><div class="newModal"><div id="modal-new"><h3>'
-    + titulo +'</h3><form id="mc">'
+    + titulo +'</h3><div id="mc">'
     + contenido
     + '<i id="close" class="fa-solid fa-circle-xmark"></i>' +'</a>' 
     + boton + '</div></div></div>';
@@ -230,8 +222,11 @@ function readURL(input) {
       reader.readAsDataURL(input.files[0]);
     }
 }
-  
-$("#userPic").change(function() { //Cuando el input cambie (se cargue un nuevo archivo) se va a ejecutar de nuevo el cambio de imagen y se verá reflejado.
-    readURL(this);
-    console.log("sg");
-});
+
+function read(){
+    $("#userPic").change(function() { //change: Cuando el input cambie (se cargue un nuevo archivo) se va a ejecutar de nuevo el cambio de imagen y se verá reflejado.
+        /*console.log("sg");*/
+        readURL(this);
+        
+    });
+}

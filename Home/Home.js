@@ -152,7 +152,7 @@ function agregar_cat(){
     div.appendChild(div2);
 
     var img = document.createElement('img');
-    img.setAttribute('src', '../ExtraDocs/SoupBlack.png');
+    img.setAttribute('src', '../ExtraDocs/Productos+Black.png');
     img.setAttribute('width', '150px');
     img.setAttribute('height', '150px');
     div2.appendChild(img);
