@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Ubuntu&display=swap');
+/*Alt + Z*/
+
 * {
     margin: 0px;
     padding: 0px;
@@ -5,7 +8,8 @@
 
 body{
     background-image: url(https://wallpaperboat.com/wp-content/uploads/2020/09/23/55471/solid-white-23.jpg);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.86), rgba(0,0,0,0.86)), url(../ExtraDocs/background.jpg);
 }
 
 .container{
@@ -44,7 +48,8 @@ body{
 
 .LogoMP img{
     width: 195px;
-    height: 130px;
+    height: 195px;
+    filter: invert(100%) sepia(28%) saturate(1220%) hue-rotate(345deg) brightness(170%) contrast(113%);
 }
 
 nav{
@@ -105,7 +110,7 @@ nav ul li{
 .contacto, .FAQ{
     float: left;
     padding: 100px;
-    color:rgb(12, 15, 168);
+    color: #84b295;
     font-size: 22px;
     font-weight: bold;
 }
