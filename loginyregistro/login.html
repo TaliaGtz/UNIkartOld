@@ -13,16 +13,16 @@
         <div class="login-box">
             <img class="avatar" src="../ExtraDocs/UK2.png" alt="Logo de Olympus">
             <h1>Inicia Sesión</h1>
-            <form id="form">
+            <form id="form" action="../Home/Home.html" onsubmit="return validateLogIn()" name="LogIn">
                 <!--- USERNAME --->
                 <label for="username">Nombre de Usuario</label>
-                <input type="text" id="username" placeholder="Enter Username">
+                <input type="text" id="username" name="User" placeholder="Enter Username">
                 
                 <!--- PASSWORD --->
                 <label for="password">Contraseña</label>
-                <input type="password" id="password" placeholder="Enter Password">
+                <input type="password" id="password" name="Pwd" placeholder="Enter Password">
             
-                <a href="../Home/Home.html"><input type="submit" value="Log In">LogIn</a>
+                <button id="LogButton" type="submit">LogIn</button>
 
                 <a href="#">Perdiste tu contraseña?</a><br>
                 <a href="../loginyregistro/register.html">No tienes una cuenta?</a>

@@ -159,7 +159,7 @@ body
 }
 
 /* BOTON */
-.login-box input
+.login-box input, button
 {
     width: 100%;
     margin-bottom: 20px;
@@ -179,7 +179,7 @@ body
 }
 
 /* DETALLES DEL BOTON */
-.login-box input[type="submit"]
+.login-box button
 {
     border: none;
     outline: none;
@@ -188,6 +188,7 @@ body
     color: #000;
     font-size: 18px;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 /* LETRAS DE ABAJO DEL BOTON */

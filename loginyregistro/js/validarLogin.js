@@ -1,4 +1,4 @@
-const form = document.getElementById('form');
+/*const form = document.getElementById('form');
 const username = document.getElementById('username');
 const password = document.getElementById('password');
 
@@ -23,4 +23,18 @@ function validarLogin()
         {
             alert("La celda de password no puede estar en blanco");
         }
+}*/
+
+function validateLogIn() {
+    let User = document.forms["LogIn"]["User"].value;
+    let Pwd = document.forms["LogIn"]["Pwd"].value;
+    if (User == "") {
+        alert("La celda de username no puede estar en blanco");
+        return false;
+    }if (Pwd == ""){
+        alert("La celda de password no puede estar en blanco");
+        return false;
+    }else{
+        return true;
+    }
 }
