@@ -9,12 +9,12 @@ const username = document.getElementById('username');
 const password = document.getElementById('password');
 const confirmpassword = document.getElementById('confirmpassword');
 
-form.addEventListener('submit', (e) => {
+/*form.addEventListener('submit', (e) => {
 	e.preventDefault();
 	
 	validar();
     
-});
+});*/
 
 function validar()
 {
@@ -35,69 +35,83 @@ function validar()
         if(namesV === '')
         {
             alert("La celda de names no puede estar en blanco");
+            return false;
         }
         
         if(lastnamesV === '')
         {
             alert("La celda de lastnames no puede estar en blanco");
+            return false;
         }
 
         if (!namesRegex.test(namesV))
         {
             alert("Escribe bien tu nombre");
+            return false;
         }
         if (!namesRegex.test(lastnamesV))
         {
             alert("Escribe bien tus apellidos");
+            return false;
         }
         
         if(birthdayV === '')
         {
             alert("La celda de birthday no puede estar en blanco");
+            return false;
             
         }
         if(fecha > fechahoy)
         {
             alert("La fecha seleccionada es mayor a la actual favor de cambiarla por una valida");
+            return false;
         }
         
         
         if(emailV === '')
         {
             alert("La celda de email no puede estar en blanco");
+            return false;
         } else if (!isEmail(emailV))
         {
             alert("No es un email valido");
+            return false;
         }
 
         if(profileimageV === '')
         {
             alert("La celda de profileimage no puede estar en blanco");
+            return false;
         }
 
         if(usernameV === '')
         {
             alert("La celda de username no puede estar en blanco");
+            return false;
         }
 
         if(passwordV === '')
         {
             alert("La celda de password no puede estar en blanco");
+            return false;
         }
 
         if(confirmpasswordV === '')
         {
-            alert("La celda de confirmpassword no puede estar en blanco");
+            alert("La celda de confirm password no puede estar en blanco");
+            return false;
         }
 
         if (!strongRegex.test(passwordV))
         {
             alert("Tu contraseña debe tener: min 8 caracteres, una mayuscula, una minuscula, un numero y un signo de puntuacion");
+            return false;
         }else if (passwordV !== confirmpasswordV)
         {
             alert("Las contraseñas no coinciden");
+            return false;
         }
-
+        return true;
         
 }
 

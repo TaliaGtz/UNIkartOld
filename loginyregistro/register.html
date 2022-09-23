@@ -13,9 +13,9 @@
     <body>
         
         <div class="register-box">
-            <img class="avatar" src="../ExtraDocs/UK2.png".png" alt="Logo de Olympus">
+            <img class="avatar" src="../ExtraDocs/UKWhite.png" alt="Logo de Olympus">
             <h1>Regístrate Aquí</h1>
-            <form id="form" class="form">
+            <form id="form" class="form" action="../Home/Home.html" onsubmit="return validar()">
                 
                 <!--- NAMES --->
                 <label for="names">Nombres</label>
@@ -29,12 +29,12 @@
                 <label for="birthday">Fecha de nacimiento</label>
                 <input type="date" id="birthday" placeholder="Enter Birthday" required>
             
-                <!--- EMIAL --->
+                <!--- EMAIL --->
                 <label for="email">Email</label>
                 <input type="email" id="email" placeholder="Enter Email" required>
 
                 <!--- PROFILE IMG --->
-                <label for="profileimage">Foto de Prfil</label>
+                <label for="profileimage">Foto de Perfil</label>
                 <input type="file" id="profileimage" placeholder="Enter Profile image" required accept="image/*">
 
                 <!--- USERNAME --->
@@ -48,14 +48,10 @@
                 <!--- CONFIRM PASSWORD --->
                 <label for="confirmpassword">Confirmar contraseña</label>
                 <input type="password" id="confirmpassword" placeholder="Enter Password" required>
-            
-                <nav>
-                    <a href="login.html"><input type="submit" value="Register"></a>
-                </nav>
-                <nav>
-                    <a href="login.html">Ya estás registrado?</a>
-                </nav>
                 
+                <button id="LogButton" type="submit">LogIn</button>
+                <a href="login.html">Ya estás registrado?</a>
+
             </form>
         </div>   
         <script src="js/validarRegister.js"></script>
