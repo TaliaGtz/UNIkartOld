@@ -44,7 +44,7 @@ document.addEventListener('scroll', debounce(storeScroll), { passive: true });
 storeScroll();
 
 $("#publicar").click(function(){
-alert("asdsa");
+//alert("asdsa");
     var text = document.getElementById("commentBox");   //Toma el texto del commentBox
     date = document.querySelector('input[type="date"]');   //Toma el texto del DateTimePicker
     var selCategory = RBSelected();
