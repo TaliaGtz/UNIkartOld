@@ -1,40 +1,41 @@
-/*const form = document.getElementById('form');
 const username = document.getElementById('username');
 const password = document.getElementById('password');
-
-form.addEventListener('submit', (e) => {
-	e.preventDefault();
-	
-	validarLogin();
-    
-});
-
-function validarLogin()
-{
-        const usernameV = username.value.trim();
-        const passwordV = password.value.trim();
-        
-        if(usernameV === '')
-        {
-            alert("La celda de username no puede estar en blanco");
-        }
-        
-        if(passwordV === '')
-        {
-            alert("La celda de password no puede estar en blanco");
-        }
-}*/
 
 function validateLogIn() {
     let User = document.forms["LogIn"]["User"].value;
     let Pwd = document.forms["LogIn"]["Pwd"].value;
+    const passwordV = password.value.trim();
+    var strongRegex = new RegExp("^(?=.[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+
     if (User == "") {
-        alert("La celda de username no puede estar en blanco");
+        swal({
+            title: "Error",
+            text: "La celda de username no puede estar en blanco",
+            icon: "error",
+            button: "Aceptar",
+        });
         return false;
-    }if (Pwd == ""){
-        alert("La celda de password no puede estar en blanco");
-        return false;
-    }else{
-        return true;
     }
+
+    if(passwordV === '')
+    {
+        swal({
+            title: "Error",
+            text: "La celda de password no puede estar en blanco",
+            icon: "error",
+            button: "Aceptar",
+        });
+        return false;
+    }
+    /*if (!strongRegex.test(passwordV))
+    {
+        swal({
+            title: "Warning",
+            text: "Tu contraseña debe tener: min 8 caracteres, una mayúscula, una minúscula, un número y un signo de puntuación",
+            icon: "warning",
+            button: "Aceptar",
+        });
+        return false;
+    }*/
+    return true;
 }

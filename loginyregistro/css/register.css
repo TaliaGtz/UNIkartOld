@@ -9,14 +9,21 @@ body
     font-family: sans-serif;
     height: 100vh;
 }
-
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number]{
+    -moz-appearance: textfield;
+}
 /* CAJA DE REGISTRO NEGRO A PANTALLA PC COMPLETA */
 .register-box
 {   
     /*margin-top: 100px;*/
     top: 8%;
     width: 320px;
-    height: 820px;
+    height: 850px;
     background: #84b295;
     color: #fff;
     left: 50%;
@@ -89,6 +96,23 @@ body
         background: #84b295;
         color: #fff;
         top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+        padding: 70px 30px;
+    }
+}
+@media screen and (max-width: 450px)
+{
+    .register-box
+    {   
+        margin-top: 400px;
+        width: 320px;
+        height: 850px;
+        background: #84b295;
+        color: #fff;
+        top: 90px;
         left: 50%;
         position: absolute;
         transform: translate(-50%, -50%);

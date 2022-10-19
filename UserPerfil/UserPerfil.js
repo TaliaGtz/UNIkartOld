@@ -140,3 +140,17 @@ function Modal(titulo, contenido, idioma) {
         borrarModal('modal'); 
     }
 }
+
+////////////////////////////////////////////////////////////////
+
+function validatePriv() {
+    if (document.getElementById('toggle').checked) {
+        document.getElementById("private").style = "display: none";
+        document.getElementById("no-private").style = "display: block";
+        //alert("checked");
+    } else {
+        document.getElementById("private").style = "display: block";
+        document.getElementById("no-private").style = "display: none";
+        //alert("You didn't check it! Let me check it for you.");
+    }
+}

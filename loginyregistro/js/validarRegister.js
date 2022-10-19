@@ -4,17 +4,11 @@ const names = document.getElementById('names');
 const lastnames = document.getElementById('lastnames');
 const birthday = document.getElementById('birthday');
 const email = document.getElementById('email');
-const profileimage = document.getElementById('profileimage');
+const celular = document.getElementById('celular');
+//const profileimage = document.getElementById('profileimage');
 const username = document.getElementById('username');
 const password = document.getElementById('password');
 const confirmpassword = document.getElementById('confirmpassword');
-
-/*form.addEventListener('submit', (e) => {
-	e.preventDefault();
-	
-	validar();
-    
-});*/
 
 function validar()
 {
@@ -22,7 +16,8 @@ function validar()
         const lastnamesV = lastnames.value.trim();
         const birthdayV = birthday.value.trim();
         const emailV = email.value.trim();
-        const profileimageV = profileimage.value.trim();
+        const celularV = celular.value.trim();
+        //const profileimageV = profileimage.value.trim();
         const usernameV = username.value.trim();
         const passwordV = password.value.trim();
         const confirmpasswordV = confirmpassword.value.trim();
@@ -34,81 +29,171 @@ function validar()
 
         if(namesV === '')
         {
-            alert("La celda de names no puede estar en blanco");
+            swal({
+                title: "Error",
+                text: "La celda de nombres no puede estar en blanco",
+                icon: "error",
+                button: "Aceptar",
+            });
             return false;
         }
         
         if(lastnamesV === '')
         {
-            alert("La celda de lastnames no puede estar en blanco");
+            swal({
+                title: "Error",
+                text: "La celda de apellidos no puede estar en blanco",
+                icon: "error",
+                button: "Aceptar",
+            });
             return false;
         }
 
         if (!namesRegex.test(namesV))
         {
-            alert("Escribe bien tu nombre");
+            swal({
+                title: "Warning",
+                text: "Escribe bien tu nombre",
+                icon: "warning",
+                button: "Aceptar",
+            });
             return false;
         }
         if (!namesRegex.test(lastnamesV))
         {
-            alert("Escribe bien tus apellidos");
+            swal({
+                title: "Warning",
+                text: "Escribe bien tus apellidos",
+                icon: "warning",
+                button: "Aceptar",
+            });
             return false;
         }
         
         if(birthdayV === '')
         {
-            alert("La celda de birthday no puede estar en blanco");
+            swal({
+                title: "Error",
+                text: "La celda de fecha de nacimiento no puede estar en blanco",
+                icon: "error",
+                button: "Aceptar",
+            });
             return false;
             
         }
         if(fecha > fechahoy)
         {
-            alert("La fecha seleccionada es mayor a la actual favor de cambiarla por una valida");
+            swal({
+                title: "Error",
+                text: "La fecha seleccionada es mayor a la actual favor de cambiarla por una válida",
+                icon: "error",
+                button: "Aceptar",
+            });
             return false;
         }
         
         
         if(emailV === '')
         {
-            alert("La celda de email no puede estar en blanco");
+            swal({
+                title: "Error",
+                text: "La celda de email no puede estar en blanco",
+                icon: "error",
+                button: "Aceptar",
+            });
             return false;
         } else if (!isEmail(emailV))
         {
-            alert("No es un email valido");
+            swal({
+                title: "Error",
+                text: "No es un email válido",
+                icon: "error",
+                button: "Aceptar",
+            });
             return false;
         }
 
-        if(profileimageV === '')
+        if(celularV === '')
         {
-            alert("La celda de profileimage no puede estar en blanco");
+            swal({
+                title: "Error",
+                text: "La celda de número de teléfono no puede estar en blanco",
+                icon: "error",
+                button: "Aceptar",
+            });
+            return false;
+        } else if (celularV.length != 10)
+        {
+            swal({
+                title: "Error",
+                text: "El número de teléfono solo acepta 10 dígitos",
+                icon: "error",
+                button: "Aceptar",
+            });
             return false;
         }
+
+        /*if(profileimageV === '')
+        {
+            swal({
+                title: "Error",
+                text: "La selección de foto de perfil no puede estar en blanco",
+                icon: "error",
+                button: "Aceptar",
+            });
+            return false;
+        }*/
 
         if(usernameV === '')
         {
-            alert("La celda de username no puede estar en blanco");
+            swal({
+                title: "Error",
+                text: "La celda de nombre de usuario no puede estar en blanco",
+                icon: "error",
+                button: "Aceptar",
+            });
             return false;
         }
 
         if(passwordV === '')
         {
-            alert("La celda de password no puede estar en blanco");
+            swal({
+                title: "Error",
+                text: "La celda de contraseña no puede estar en blanco",
+                icon: "error",
+                button: "Aceptar",
+            });
             return false;
         }
 
         if(confirmpasswordV === '')
         {
-            alert("La celda de confirm password no puede estar en blanco");
+            swal({
+                title: "Error",
+                text: "La celda de confirmar contraseña no puede estar en blanco",
+                icon: "error",
+                button: "Aceptar",
+            });
             return false;
         }
 
         if (!strongRegex.test(passwordV))
         {
-            alert("Tu contraseña debe tener: min 8 caracteres, una mayuscula, una minuscula, un numero y un signo de puntuacion");
+            swal({
+                title: "Warning",
+                text: "Tu contraseña debe tener: min 8 caracteres, una mayúscula, una minúscula, un número y un signo de puntuación",
+                icon: "warning",
+                button: "Aceptar",
+            });
             return false;
         }else if (passwordV !== confirmpasswordV)
         {
-            alert("Las contraseñas no coinciden");
+            swal({
+                title: "Error",
+                text: "Las contraseñas no coinciden",
+                icon: "error",
+                button: "Aceptar",
+            });
             return false;
         }
         return true;
