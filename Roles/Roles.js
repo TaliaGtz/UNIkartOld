@@ -104,3 +104,10 @@ function Modal(titulo, contenido, idioma) {
         borrarModal('modal'); 
     }
 }
+
+////////////////////////////////////////////////////////////////
+
+const publicAcc = document.getElementById("aceptar");
+publicAcc.addEventListener("click", ()=>{
+    document.getElementById("toggle").setAttribute("disabled", ""); 
+});
