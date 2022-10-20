@@ -50,27 +50,26 @@
             <ul class="userInfo">
                 <br>
                 <li id="username">Username</li>
-                <li>Rol: Comprador</li>
+                <li id="select">Rol: <input type="radio" name="role" id="comp" checked> Comprador <input type="radio" name="role" id="vend"> Vendedor <input type="radio" name="role" id="admin"> Administrador</li>
+                <li class="vendedor">(Vendedor) Negocio, <a href="../Menu/Menu.html">Menú</a></li>
                 <li>Cuenta: privada
                 <!-- Rounded switch -->
                 <label for="toggle" class="switch">
                     <input type="checkbox" id="toggle" onclick="validatePriv()">
                     <span for="toggle" class="slider round"></span>
                 </label> pública</li>
-                <li>Correo (visible solo para sí mismo)</li>
-                <li>Celular (visible solo para sí mismo)</li>
-                <li>Fecha de nacimiento (visible solo para sí mismo)</li>
+                <li class="no-private">Correo</li>
+                <li class="vendedor">Celular</li>
                 <br>
-                <a href="../Roles/Roles.html">¿Quieres una cuenta de vendedor/repartidor?</a>
+                <a class="a" href="../Roles/Roles.html">¿Quieres una cuenta de vendedor/repartidor?</a>
             </ul>
         </div>
 
         <div class="contenido">
-            <p id="private">Esta cuenta es privada</p><br>
-            <p id="no-private">Wishlists</p><br>
-            <p>Vendedor: <a href="../Menu/Menu.html">Menú</a></p><br>
-            <p>Vendedor: Productos autorizados por el admin (con existencias)</p><br>
-            <p>Admin: Productos autorizados por mí</p><br>
+            <p class="private">Esta cuenta es privada</p><br>
+            <p class="no-private">Wishlists</p><br>
+            <p class="vendedor">(Vendedor) Productos autorizados por el admin (con existencias)</p><br>
+            <p class="admin">(Admin) Productos autorizados por mí</p><br>
         </div>
 
         <!-- sección de footer -->

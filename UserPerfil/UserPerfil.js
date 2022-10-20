@@ -145,12 +145,53 @@ function Modal(titulo, contenido, idioma) {
 
 function validatePriv() {
     if (document.getElementById('toggle').checked) {
-        document.getElementById("private").style = "display: none";
-        document.getElementById("no-private").style = "display: block";
-        //alert("checked");
+        $('.private').css('display','none');
+        $('.no-private').css('display','block');
     } else {
-        document.getElementById("private").style = "display: block";
-        document.getElementById("no-private").style = "display: none";
-        //alert("You didn't check it! Let me check it for you.");
+        $('.private').css('display','block');
+        $('.no-private').css('display','none');
+    }
+}
+
+/*Eleccion radio buttons*/
+const roleToggle = document.querySelector("#select");
+roleToggle.addEventListener("click", ()=>{
+    var selRole;
+    selRole = RBSelected();
+    if(selRole == 1){
+        document.getElementById("toggle").disabled = false;
+        $('.vendedor').css('display','none');
+        $('.admin').css('display','none');
+    }
+    if(selRole == 2){
+        document.getElementById("toggle").checked = true;
+        $('.private').css('display','none');
+        $('.no-private').css('display','block');
+        $('.vendedor').css('display','block');
+        $('.admin').css('display','none');
+        document.getElementById("toggle").disabled = true;
+    }
+    if(selRole == 3){
+        document.getElementById("toggle").checked = true;
+        $('.private').css('display','none');
+        $('.no-private').css('display','block');
+        $('.vendedor').css('display','none');
+        $('.admin').css('display','block');
+        document.getElementById("toggle").disabled = true;
+    }
+});
+
+function RBSelected(){
+    if(document.getElementById('comp').checked){
+        select = 1;
+        return 1;
+    }
+    if(document.getElementById('vend').checked){
+        select = 2;
+        return 2;
+    }
+    if(document.getElementById('admin').checked){
+        select = 3;
+        return 3;
     }
 }

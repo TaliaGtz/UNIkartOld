@@ -338,7 +338,7 @@ li{
     align-items: center;
 }
 
-.userInfo a{
+.userInfo .a{
     padding: 7px 15px;
     background-color: tomato;
     color: aliceblue;
@@ -351,7 +351,7 @@ li{
     grid-column: 1/15;
 }
 
-#no-private{
+.no-private, .admin, .vendedor{
     display: none;
 }
 
