@@ -106,7 +106,7 @@
 
                 </form>
                 <label>Al ser vendedor tu perfil se hará público, todos podrán acceder a tu menú desde tu perfil y se podrán visualizar tus productos autorizados por el administrador, junto con sus existencias.</label><br>
-                <input id="aceptar" type="submit" value="Aceptar">
+                <a href="#"><button id="aceptar" type="submit">Aceptar</button></a>
             </div>
             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                 <h3>¿Qué necesito para ser repartidor?</h3>
@@ -124,10 +124,28 @@
                         <label id="ccv">CCV: </label><input id="CCV" type="number" placeholder="XXX"  style="width: 10%;">
                     </div>
                 </form>
-                <input id="aceptar" type="submit" value="Aceptar">
+                <a href="#"><button id="aceptar" type="submit">Aceptar</button></a>
             </div>
             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                 <h3>¿Qué necesito para ser administrador?</h3>
+                <label>Para ser administrador debes llenar el siguiente formulario:</label><br><br>
+                <form action="" class="formulario">
+                    <label>¿Por qué quieres ser administrador?</label>
+                    <input type="text" placeholder="Desarrolla tu respuesta..."  style="width: 100%;"><br>
+
+                    <label>¿Qué edad tienes?</label>
+                    <input type="text" style="width: 10%;"><br>
+
+                    <label>¿Qué esperas obtener al volverte administrador?</label>
+                    <input type="text" placeholder="Desarrolla tu respuesta..." style="width: 50%;"><br>
+                    
+                    <br><label><b>Información de contacto:</b></label><br>
+                        <input type="number" placeholder="Número telefónico" style="width: 30%;"><input type="checkbox" name="same">Usar el mismo que dí de alta<br>
+                        <input type="text" placeholder="Correo" style="width: 30%;"><input type="checkbox" name="same">Usar el mismo que dí de alta
+                </form>
+                <label>Al ser administrador tu perfil se hará público, tu trabajo será ayudar a dar de alta áreas, negocios, categorías, productos, entre otras cosas.</label><br>
+                <label>Te contactaremos en breve para seguir con el procedimiento</label><br>
+                <a href="#"><button id="aceptar" type="submit">Aceptar</button></a>
             </div>
         </div>    
     </section>
