@@ -279,7 +279,14 @@ nav ul li:hover{
 
 .productImg{
     max-width: 300px;
-    height: auto;
+    height: 199px;
+    /*height: auto;*/
+    overflow: hidden;
+}
+
+.carousel-item{
+    margin-right: 0px;
+    /*transform: translate(0, 100px);*/
 }
 
 #productName{
@@ -294,6 +301,10 @@ nav ul li:hover{
     padding: 5px;
 }
 
+.description p{
+    margin-bottom: 0px;
+}
+
 .article{
     padding: 10px 20px 0px 20px;
 }
@@ -302,7 +313,7 @@ nav ul li:hover{
     font-size: 30px;
     float: right;
     position: relative;
-    top: -120px;
+    top: -155px;
     cursor: pointer;
     color: #2c1507;
 }
@@ -313,7 +324,7 @@ nav ul li:hover{
     font-size: 30px;
     float: right;
     position: relative;
-    top: 47px;
+    top: 5px;
     right: -32px;
     cursor: pointer;
     color: #2c1507;
