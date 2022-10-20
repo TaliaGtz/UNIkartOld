@@ -333,6 +333,10 @@ nav ul li:hover{
     color: #67432e;
 }
 
+.quantityNum{
+    margin-bottom: 0px;
+}
+
 /* sección de comentarios */
 
 .comments{
