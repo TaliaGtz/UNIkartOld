@@ -66,27 +66,23 @@
 
                     <label>Nombre de tu negocio:</label><input type="text" style="width: 50%;"><br>
 
-                    <label>Información de contacto:</label><br>
-                        <input type="number" placeholder="Número telefónico" style="width: 30%;"><input type="checkbox" name="same">Usar el mismo que dí de alta<br>
-                        <input type="text" placeholder="Correo" style="width: 30%;"><input type="checkbox" name="same">Usar el mismo que dí de alta<br>
-
                     <label>Menú en PDF:</label><br>
 
-                    <label>Categorías de tus productos (Selecciona todas las que concuerden): </label><br>
+                    <label>Categorías de tus productos (Selecciona todas las que concuerden): </label>
                     <table class="default">
                         <tr>
-                          <td><input type="checkbox" name="category">Categoría</td>
-                          <td><input type="checkbox" name="category">Categoría</td>
-                          <td><input type="checkbox" name="category">Categoría</td>
-                          <td><input type="checkbox" name="category">Categoría</td>
-                          <td><input type="checkbox" name="category">Categoría</td>
-                          <td><input type="checkbox" name="category">Categoría</td>
-                          <td><input type="checkbox" name="category">Categoría</td>
-                          <td><input type="checkbox" name="category">Categoría</td>
-                          <td><input type="checkbox" name="category">Categoría</td>
-                          <td><input type="checkbox" name="category">Categoría</td>
+                            <td><input type="checkbox" name="category">Categoría</td>
+                            <td><input type="checkbox" name="category">Categoría</td>
+                            <td><input type="checkbox" name="category">Categoría</td>
+                            <td><input type="checkbox" name="category">Categoría</td>
+                            <td><input type="checkbox" name="category">Categoría</td>
+                            <td><input type="checkbox" name="category">Categoría</td>
+                            <td><input type="checkbox" name="category">Categoría</td>
+                            <td><input type="checkbox" name="category">Categoría</td>
+                            <td><input type="checkbox" name="category">Categoría</td>
+                            <td><input type="checkbox" name="category">Categoría</td>
                         </tr>
-                    </table><br>
+                    </table>
 
                     <label>¿No encuentras categorías que definan bien tus productos? Escríbelas a continuación:</label><input type="text" style="width: 50%;"><br>
 
@@ -95,6 +91,10 @@
                     <input type="radio" name="repart" value="no">No me interesa<br>
 
                     <label>Comisión dada a los repartidores:</label><input id="komi" type="number"><br><br>
+
+                    <label><b>Información de contacto:</b></label><br>
+                        <input type="number" placeholder="Número telefónico" style="width: 30%;"><input type="checkbox" name="same">Usar el mismo que dí de alta<br>
+                        <input type="text" placeholder="Correo" style="width: 30%;"><input type="checkbox" name="same">Usar el mismo que dí de alta<br><br>
 
                     <label><b>Datos de tu cuenta bancaria para pagos en línea:</b></label><br>
                     <div id="Tarjeta" class="tarjeta">
@@ -110,6 +110,21 @@
             </div>
             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                 <h3>¿Qué necesito para ser repartidor?</h3>
+                <label>Para ser repartidor debes llenar el siguiente formulario (Las podrás cambiar después):</label><br><br>
+                <form action="" class="formulario">
+                    <label><b>Información de contacto:</b></label><br>
+                        <input type="number" placeholder="Número telefónico" style="width: 30%;"><input type="checkbox" name="same">Usar el mismo que dí de alta<br>
+                        <input type="text" placeholder="Correo" style="width: 30%;"><input type="checkbox" name="same">Usar el mismo que dí de alta<br><br>
+
+                    <label><b>Datos de tu cuenta bancaria para pagos en línea (Esto incluye tus comisiones y propinas):</b></label><br>
+                    <div id="Tarjeta" class="tarjeta">
+                        <label>Nombre del propietario: </label><input type="text" style="width: 50%;"><br>
+                        <label>Número de tarjeta: </label><input type="number" placeholder="XXXXXXXXXXXXXX" style="width: 30%;"><br>
+                        <label>Fecha de expiración: </label><input type="number" class="month" placeholder="XX" style="width: 10%;"> / <input type="number" class="year" placeholder="XX" style="width: 10%;"><br>
+                        <label id="ccv">CCV: </label><input id="CCV" type="number" placeholder="XXX"  style="width: 10%;">
+                    </div>
+                </form>
+                <input id="aceptar" type="submit" value="Aceptar">
             </div>
             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                 <h3>¿Qué necesito para ser administrador?</h3>
