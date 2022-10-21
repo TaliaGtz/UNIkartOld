@@ -75,6 +75,10 @@ CREATE TABLE IF NOT EXISTS Tarjeta(
 		PRIMARY KEY (ID_Tarjeta)
 );
 ALTER TABLE Tarjeta ADD INDEX idx_NombreTarj(NombreTarj);
+ALTER TABLE Tarjeta MODIFY COLUMN NombreTarj 	varchar(300) 	comment 'Nombre del beneficiario';
+ALTER TABLE Tarjeta MODIFY COLUMN NumTarj 		bigint 			comment 'Número de tarjeta';
+ALTER TABLE Tarjeta MODIFY COLUMN FechaTarj 	datetime 		comment 'Fecha de vencimiento de la tarjeta';
+ALTER TABLE Tarjeta MODIFY COLUMN CCVTarj 		tinyint 		comment 'CCV de la tarjeta';
 
 
 #Creamos la tabla de Areas
@@ -92,6 +96,8 @@ ADD ID_Negocio smallint unsigned 	NOT NULL,
 	foreign key (ID_Negocio)
 	references Negocios (ID_Negocio);
 ALTER TABLE Areas ADD INDEX idx_NombreAreas(Nombre);
+ALTER TABLE Areas MODIFY COLUMN Nombre 			varchar(25) comment 'Nombre del Área';
+ALTER TABLE Areas MODIFY COLUMN AreaAprobadaX 	varchar(25) comment 'Nombre del administrador que aprobó el área';
 
 
 #Creamos la tabla de Negocios
@@ -104,6 +110,8 @@ CREATE TABLE IF NOT EXISTS Negocios(
 		PRIMARY KEY (ID_Negocio)
 );
 ALTER TABLE Negocios ADD INDEX idx_NombreNegocios(Nombre);
+ALTER TABLE Negocios MODIFY COLUMN Nombre 			varchar(25) comment 'Nombre del Negocio';
+ALTER TABLE Negocios MODIFY COLUMN NegAprobadoX 	varchar(25) comment 'Nombre del administrador que aprobó el negocio';
 
 
 #Creamos la tabla de Productos
@@ -130,6 +138,13 @@ ADD ID_Comentario smallint unsigned NOT NULL,
 		foreign key (ID_Comentario)
 		references Comentarios (ID_Comentario);
 ALTER TABLE Productos ADD INDEX idx_NombreProductos(Nombre);
+ALTER TABLE Productos MODIFY COLUMN Negocio 		varchar(25) comment 'Nombre del Negocio al que pertenece el producto';
+ALTER TABLE Productos MODIFY COLUMN Nombre 			varchar(25) comment 'Nombre del producto';
+ALTER TABLE Productos MODIFY COLUMN Valoracion 		tinyint 	comment 'Valoración 1-5 del producto';
+ALTER TABLE Productos MODIFY COLUMN Precio 			bool 		comment 'Bool del precio para saber si tiene o se tiene que cotizar el producto';
+ALTER TABLE Productos MODIFY COLUMN PrecioCant 		smallint 	comment 'Precio del producto';
+ALTER TABLE Productos MODIFY COLUMN Disponibilidad 	int 		comment 'Disponibilidad del producto (Cantidad de artículos)';
+ALTER TABLE Productos MODIFY COLUMN Descripcion 	varchar(100)comment 'Descripción del producto';
 
 
 #Creamos la tabla de Categorias
@@ -142,6 +157,8 @@ CREATE TABLE IF NOT EXISTS Categorias(
 		PRIMARY KEY (ID_Categoria)
 );
 ALTER TABLE Categorias ADD INDEX idx_NombreCategoria(Categoria);
+ALTER TABLE Categorias MODIFY COLUMN Categoria 		varchar(25) comment 'Nombre de la categoría';
+ALTER TABLE Categorias MODIFY COLUMN CatAprobadaX 	tinyint 	comment 'Nombre del administrador que aprobó la categoría';
 
 
 #Creamos la tabla de Comentarios
@@ -155,6 +172,9 @@ CREATE TABLE IF NOT EXISTS Comentarios(
 		PRIMARY KEY (ID_Comentario)
 );
 ALTER TABLE Comentarios ADD INDEX idx_Comentarios(Comentario);
+ALTER TABLE Comentarios MODIFY COLUMN Comentario 	varchar(300) 	comment 'Cuerpo del comentario';
+ALTER TABLE Comentarios MODIFY COLUMN Valoracion 	tinyint 		comment 'Valoración del producto por parte del usuario';
+ALTER TABLE Comentarios MODIFY COLUMN Fecha 		datetime 		comment 'Fecha en que se hizo el comentario';
 
 
 #Creamos la tabla de Menu
@@ -171,6 +191,7 @@ ADD ID_Producto smallint unsigned 	NOT NULL,
 		foreign key (ID_Producto)
 		references Productos (ID_Producto);
 ALTER TABLE Menu ADD INDEX idx_Menu(LinkMenu);
+ALTER TABLE Menu MODIFY COLUMN LinkMenu 	varchar(300) 	comment 'Link en donde se encuentra el menú del negocio';
 
 
 #Creamos la tabla de ProductosPlus
@@ -187,6 +208,7 @@ ADD ID_Producto smallint unsigned 	NOT NULL,
 		foreign key (ID_Producto)
 		references Productos (ID_Producto);
 ALTER TABLE ProductosPlus ADD INDEX idx_ProductosPlus(Especificacion);
+ALTER TABLE ProductosPlus MODIFY COLUMN Especificacion 	varchar(300) comment 'Bloque de recomendaciones al que pertenece el producto';
 
 
 #Creamos la tabla de BarraNavegacion
@@ -238,7 +260,7 @@ ALTER TABLE ProdWL ADD INDEX idx_ProdWL(ID_ProdWL);
 CREATE TABLE IF NOT EXISTS OrdenCompra(
 	ID_Nota			smallint unsigned 	NOT NULL auto_increment,
     CostoProd 		int unsigned 		NOT NULL,
-    Propina 		int unsigned 		NOT NULL,
+    Propina 		int unsigned,
     TarifaServicio 	int unsigned 		NOT NULL,
     Total 			int unsigned 		NOT NULL,
     CatPago 		varchar(300)		NOT NULL,
@@ -257,6 +279,13 @@ ADD ID_Carrito smallint unsigned 	NOT NULL,
 		foreign key (ID_Carrito)
 		references Carrito (ID_Carrito);
 ALTER TABLE OrdenCompra ADD INDEX idx_TotalNota(Total);
+ALTER TABLE OrdenCompra MODIFY COLUMN CostoProd 		int 		comment 'Precio total de los productos';
+ALTER TABLE OrdenCompra MODIFY COLUMN Propina 			int 		comment 'Propina';
+ALTER TABLE OrdenCompra MODIFY COLUMN TarifaServicio 	int 		comment 'Precio de la tarifa del servicio';
+ALTER TABLE OrdenCompra MODIFY COLUMN Total 			int 		comment 'Total a pagar';
+ALTER TABLE OrdenCompra MODIFY COLUMN CatPago 			varchar(300)comment 'Categoría de pago (físico/tarjeta/PayPal)';
+ALTER TABLE OrdenCompra MODIFY COLUMN Codigo 			varchar(30) comment 'Código de la compra';
+
 
 
 #Creamos la tabla de Carrito
@@ -274,6 +303,8 @@ ADD ID_ProdKart smallint unsigned 	NOT NULL,
 		foreign key (ID_ProdKart)
 		references ProdKart (ID_ProdKart);
 ALTER TABLE Carrito ADD INDEX idx_TotalCarrito(Cantidad);
+ALTER TABLE Carrito MODIFY COLUMN Cantidad 		tinyint 	comment 'Cantidad de productos en el carrito';
+ALTER TABLE Carrito MODIFY COLUMN FechaKart 	datetime 	comment 'Fecha del carrito';
 
 
 #Creamos la tabla de Wishlist
@@ -293,6 +324,10 @@ ADD ID_ProdWL smallint unsigned 	NOT NULL,
 		foreign key (ID_ProdWL)
 		references ProdWL (ID_ProdWL);
 ALTER TABLE Wishlist ADD INDEX idx_NameWishlist(Nombre);
+ALTER TABLE Wishlist MODIFY COLUMN Imagen 		varchar(300)	comment 'Imagen del ícono de la lista';
+ALTER TABLE Wishlist MODIFY COLUMN Nombre 		varchar(25) 	comment 'Nombre de la lista';
+ALTER TABLE Wishlist MODIFY COLUMN Privacidad 	bool 			comment 'Privacidad pública/privada de la lista';
+ALTER TABLE Wishlist MODIFY COLUMN Descripcion 	varchar(100)	comment 'Descripción de la lista';
 
 
 #Creamos la tabla de Compra
@@ -328,6 +363,10 @@ ADD ID_Chat 		smallint unsigned 	NOT NULL,
 		foreign key (ID_Chat)
 		references Chat (ID_Chat);
 ALTER TABLE Compra ADD INDEX idx_LugarCompra(LugarEntrega);
+ALTER TABLE Compra MODIFY COLUMN LugarEntrega 	varchar(100)	comment 'Lugar de entrega del pedido';
+ALTER TABLE Compra MODIFY COLUMN NombreRepart 	varchar(25) 	comment 'Nombre del repartidor';
+ALTER TABLE Compra MODIFY COLUMN NombreCliente 	varchar(25) 	comment 'Nombre del cliente';
+ALTER TABLE Compra MODIFY COLUMN NombreVend 	varchar(25)		comment 'Nombre del vendedor';
 
 
 #Creamos la tabla de HistPedidos
@@ -349,6 +388,8 @@ ADD ID_Compra 	smallint unsigned 	NOT NULL,
 		foreign key (ID_Compra)
 		references Compra (ID_Compra);
 ALTER TABLE HistPedidos ADD INDEX idx_FechaPed(FechaNom);
+ALTER TABLE HistPedidos MODIFY COLUMN FechaNom 	date	comment 'Fecha del pedido. Ésta también se desplegará como nombre en el historial';
+ALTER TABLE HistPedidos MODIFY COLUMN Hora 		time	comment 'Hora del pedido';
 
 
 #Creamos la tabla de HistVentas
@@ -361,6 +402,8 @@ CREATE TABLE IF NOT EXISTS HistVentas(
 		PRIMARY KEY (ID_HistVentas)
 );
 ALTER TABLE HistVentas ADD INDEX idx_FechaVen(FechaNom);
+ALTER TABLE HistVentas MODIFY COLUMN FechaNom 	date	comment 'Fecha de la venta. Ésta también se desplegará como nombre en el historial';
+ALTER TABLE HistVentas MODIFY COLUMN Hora 		time	comment 'Hora de la venta';
 
 
 #Creamos la tabla de VentasResumen
@@ -385,6 +428,11 @@ ADD ID_Compra 	smallint unsigned 	NOT NULL,
 		foreign key (ID_Compra)
 		references Compra (ID_Compra);
 ALTER TABLE VentasResumen ADD INDEX idx_TotalVentas(VentasTotales);
+ALTER TABLE VentasResumen MODIFY COLUMN FreqLugares 		varchar(100)comment 'Cálculo de la frecuencia de lugares a entregar';
+ALTER TABLE VentasResumen MODIFY COLUMN FreqRepartidores 	varchar(25)	comment 'Cálculo de la frecuencia de repartidores';
+ALTER TABLE VentasResumen MODIFY COLUMN FreqCategorias 		varchar(25)	comment 'Cálculo de la frecuencia de categorías de productos';
+ALTER TABLE VentasResumen MODIFY COLUMN VentasTotalesNum 	int			comment 'Cálculo de la sumatoria del total de ventas';
+ALTER TABLE VentasResumen MODIFY COLUMN VentasTotales 		int			comment 'Cálculo del total de ventas en MXN';
 
 
 #Creamos la tabla de Chat
@@ -405,3 +453,13 @@ CREATE TABLE IF NOT EXISTS Chat(
 		PRIMARY KEY (ID_Chat)
 );
 ALTER TABLE Chat ADD INDEX idx_Chat(NombreLft);
+ALTER TABLE Chat MODIFY COLUMN ImgLft 		varchar(300)	comment 'Imagen del usuario con el que se está hablando';
+ALTER TABLE Chat MODIFY COLUMN NombreLft 	varchar(25)		comment 'Nombre del usuario con el que se está hablando';
+ALTER TABLE Chat MODIFY COLUMN MensajesLft 	varchar(300)	comment 'Mensajes del usuario con el que se está hablando';
+ALTER TABLE Chat MODIFY COLUMN RolLft 		varchar(25)		comment 'Rol del usuario con el que se está hablando';
+ALTER TABLE Chat MODIFY COLUMN ImgRgt 		varchar(300)	comment 'Imagen del usuario';
+ALTER TABLE Chat MODIFY COLUMN NombreRgt 	varchar(25)		comment 'Nombre del usuario';
+ALTER TABLE Chat MODIFY COLUMN MensajesRgt 	varchar(300)	comment 'Mensajes del usuario';
+ALTER TABLE Chat MODIFY COLUMN RolRgt 		varchar(25)		comment 'Rol del usuario';
+ALTER TABLE Chat MODIFY COLUMN Tiempo 		time			comment 'Tiempo de actividad';
+ALTER TABLE Chat MODIFY COLUMN Actividad 	bool			comment 'Booleano entre si está activo o no el usuario';
