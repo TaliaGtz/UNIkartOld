@@ -271,10 +271,11 @@ nav ul li:hover{
 }
 
 .square{
-    grid-row: 1/8;
+    grid-row: 1/9;
     grid-column: 1/15;
     background: #f5deb3;
     margin: 0 20px; 
+    margin-bottom: 50px;
 }
 
 .userImg{
