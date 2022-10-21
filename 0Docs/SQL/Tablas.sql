@@ -21,6 +21,14 @@ alter table Registro
 		foreign key (ID_Tarjeta)
 		references Tarjeta (ID_Tarjeta);
 ALTER TABLE Registro ADD INDEX idx_nomRegistro (Nombres);
+ALTER TABLE Registro MODIFY COLUMN Nombres 		varchar(25) comment 'Nombres del usuario';
+ALTER TABLE Registro MODIFY COLUMN Apellidos 	varchar(25) comment 'Apellidos del usuario';
+ALTER TABLE Registro MODIFY COLUMN FechaNac 	datetime 	comment 'Fecha de nacimiento del usuario';
+ALTER TABLE Registro MODIFY COLUMN Email 		varchar(50) comment 'Correo electrónico del usuario';
+ALTER TABLE Registro MODIFY COLUMN FotoPerfil 	varchar(300)comment 'ruta de la foto de perfil del usuario';
+ALTER TABLE Registro MODIFY COLUMN Username 	varchar(25) comment 'Nombre de usuario del usuario';
+ALTER TABLE Registro MODIFY COLUMN Contrasenia 	varchar(25) comment 'Contraseña del usuario';
+
 
 #Creamos la tabla de Perfil
 CREATE TABLE IF NOT EXISTS Perfil(
@@ -50,6 +58,9 @@ ADD ID_Menu		smallint unsigned 	NOT NULL,
 		foreign key (ID_Menu)
 		references Menu (ID_Menu);
 ALTER TABLE Perfil ADD INDEX idx_rolPerfil (Rol);
+ALTER TABLE Perfil MODIFY COLUMN Rol 			varchar(25) comment 'Rol del usuario';
+ALTER TABLE Perfil MODIFY COLUMN Visibilidad 	bool 		comment 'Visibilidad del perfil del usuario (privado/público)';
+ALTER TABLE Perfil MODIFY COLUMN Celular 		int 		comment 'Número telefónico del usuario';
 
 
 #Creamos la tabla de Tarjeta

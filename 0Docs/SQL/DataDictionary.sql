@@ -15,3 +15,6 @@ AND t.table_schema = 'sakila'
 ORDER BY
 		c.column_name,
 		c.ordinal_position;
+        
+
+ALTER TABLE Registro MODIFY COLUMN Nombres varchar(25) comment 'The yrty where the customer is located';
