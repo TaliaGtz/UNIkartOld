@@ -5,37 +5,42 @@ Alter table tabla
 	
 Describe Table
 
-Delimiter =)
-Create procedure sp_GestionTabla
+Delimiter $!
+Create procedure sp_RegistroTabla
 (
 	paccion  tinyint,
-	ptable_id  smallint,
-	pfirst_name  varchar(45),
-	plast_name  varchar(45)
+	pID_Registro  smallint,   
+    pNombres 	varchar(25),
+    pApellidos 	varchar(25),
+    pFechaNac	datetime,
+    pEmail		varchar(50),
+    pFotoPerfil	varchar(300),
+    pUsername	varchar(25),
+    pContrasenia	varchar(25)
 )
 BEGIN
 	declare hoy  datetime;
 	set hoy  = now();
 	
 	If paccion= 1 then
-		Insert into tabla(first_name, last_name)
-			Values(pfirst_name, plastname);
+		Insert into tabla(pNombres, pApellidos, pFechaNac, pEmail, pFotoperfil, pUsername, pContrasenia)
+			Values(pNombres, pApellidos, pFechaNac, pEmail, pFotoperfil, pUsername, pContrasenia);
 	elseif paccion = 2 then
 		Update tabla
-			Where table_id=ptable_id;
+			Where ID_Registro=pID_Registro;
 	elseif paccion= 3 then
 		Update tabla
 			Set status=0
-			Where table_id=ptable_id;
+			Where ID_Registro=pID_Registro;
 	elseif paccion=4 then
 		Delete from tabla
-			Where table_id=ptable_id;
+			Where ID_Registro=pID_Registro;
 	elseif paccion= 5 then
 		Select tabla
-			Where table_id=ptable_id;
+			Where ID_Registro=pID_Registro;
 	END IF;
 			
-END =)
+END $!
 Delimiter ;
 
-call sp_GestionTabla();
+call sp_RegistroTabla();
