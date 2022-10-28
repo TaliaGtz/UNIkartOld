@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS Registro(
 		PRIMARY KEY (ID_Registro)
 );
 alter table Registro
-	add constraint PK_ID_Registro
+	add constraint FK_ID_Registro
 		foreign key (ID_Tarjeta)
 		references Tarjeta (ID_Tarjeta);
 ALTER TABLE Registro ADD INDEX idx_nomRegistro (Nombres);
@@ -45,16 +45,16 @@ ADD ID_Registro smallint unsigned 	NOT NULL,
 ADD ID_Producto smallint unsigned 	NOT NULL,
 ADD ID_Areas	smallint unsigned 	NOT NULL,
 ADD ID_Menu		smallint unsigned 	NOT NULL,
-	add constraint PK_ID_Perfil_Reg
+	add constraint FK_ID_Perfil_Reg
 		foreign key (ID_Registro)
 		references Registro (ID_Registro),
-	add constraint PK_ID_Perfil_Prod
+	add constraint FK_ID_Perfil_Prod
 		foreign key (ID_Producto)
 		references Productos (ID_Producto),
-	add constraint PK_ID_Perfil_Areas
+	add constraint FK_ID_Perfil_Areas
 		foreign key (ID_Areas)
 		references Areas (ID_Areas),
-	add constraint PK_ID_Perfil_Menu
+	add constraint FK_ID_Perfil_Menu
 		foreign key (ID_Menu)
 		references Menu (ID_Menu);
 ALTER TABLE Perfil ADD INDEX idx_rolPerfil (Rol);
@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS Areas(
 );
 alter table Areas
 ADD ID_Negocio smallint unsigned 	NOT NULL,
-  add constraint PK_ID_Areas_Neg
+  add constraint FK_ID_Areas_Neg
 	foreign key (ID_Negocio)
 	references Negocios (ID_Negocio);
 ALTER TABLE Areas ADD INDEX idx_NombreAreas(Nombre);
@@ -131,10 +131,10 @@ CREATE TABLE IF NOT EXISTS Productos(
 alter table Productos
 ADD ID_Categoria smallint unsigned 	NOT NULL,
 ADD ID_Comentario smallint unsigned NOT NULL,
-	add constraint PK_ID_Prod_Cat
+	add constraint FK_ID_Prod_Cat
 		foreign key (ID_Categoria)
 		references Categorias (ID_Categoria),
-	add constraint PK_ID_Prod_Com
+	add constraint FK_ID_Prod_Com
 		foreign key (ID_Comentario)
 		references Comentarios (ID_Comentario);
 ALTER TABLE Productos ADD INDEX idx_NombreProductos(Nombre);
@@ -187,7 +187,7 @@ CREATE TABLE IF NOT EXISTS Menu(
 );
 alter table Menu
 ADD ID_Producto smallint unsigned 	NOT NULL,
-	add constraint PK_ID_Menu_Prod
+	add constraint FK_ID_Menu_Prod
 		foreign key (ID_Producto)
 		references Productos (ID_Producto);
 ALTER TABLE Menu ADD INDEX idx_Menu(LinkMenu);
@@ -204,7 +204,7 @@ CREATE TABLE IF NOT EXISTS ProductosPlus(
 );
 alter table ProductosPlus
 ADD ID_Producto smallint unsigned 	NOT NULL,
-	add constraint PK_ID_ProdPlus_Prod
+	add constraint FK_ID_ProdPlus_Prod
 		foreign key (ID_Producto)
 		references Productos (ID_Producto);
 ALTER TABLE ProductosPlus ADD INDEX idx_ProductosPlus(Especificacion);
@@ -220,7 +220,7 @@ CREATE TABLE IF NOT EXISTS BarraNavegacion(
 );
 alter table BarraNavegacion
 ADD ID_ProdPlus smallint unsigned 	NOT NULL,
-	add constraint PK_ID_NavBar_ProdPlus
+	add constraint FK_ID_NavBar_ProdPlus
 		foreign key (ID_ProdPlus)
 		references ProductosPlus (ID_ProdPlus);
 ALTER TABLE BarraNavegacion ADD INDEX idx_BarraNav(ID_Nav);
@@ -235,7 +235,7 @@ CREATE TABLE IF NOT EXISTS ProdKart(
 );
 alter table ProdKart
 ADD ID_Producto smallint unsigned 	NOT NULL,
-	add constraint PK_ID_ProdKart_Prod
+	add constraint FK_ID_ProdKart_Prod
 		foreign key (ID_Producto)
 		references Productos (ID_Producto);
 ALTER TABLE ProdKart ADD INDEX idx_ProdKart(ID_ProdKart);
@@ -250,7 +250,7 @@ CREATE TABLE IF NOT EXISTS ProdWL(
 );
 alter table ProdWL
 ADD ID_Producto smallint unsigned 	NOT NULL,
-	add constraint PK_ID_ProdWL_Prod
+	add constraint FK_ID_ProdWL_Prod
 		foreign key (ID_Producto)
 		references Productos (ID_Producto);
 ALTER TABLE ProdWL ADD INDEX idx_ProdWL(ID_ProdWL);
@@ -272,10 +272,10 @@ CREATE TABLE IF NOT EXISTS OrdenCompra(
 alter table OrdenCompra
 ADD ID_Tarjeta smallint unsigned 	NOT NULL,
 ADD ID_Carrito smallint unsigned 	NOT NULL,
-	add constraint PK_ID_OrdC_Tarj
+	add constraint FK_ID_OrdC_Tarj
 		foreign key (ID_Tarjeta)
 		references Tarjeta (ID_Tarjeta),
-	add constraint PK_ID_OrdC_Kart
+	add constraint FK_ID_OrdC_Kart
 		foreign key (ID_Carrito)
 		references Carrito (ID_Carrito);
 ALTER TABLE OrdenCompra ADD INDEX idx_TotalNota(Total);
@@ -347,19 +347,19 @@ ADD ID_Nota 		smallint unsigned 	NOT NULL,
 ADD ID_HistPed 		smallint unsigned 	NOT NULL,
 ADD ID_HistVentas 	smallint unsigned 	NOT NULL,
 ADD ID_Chat 		smallint unsigned 	NOT NULL,
-	add constraint PK_ID_Compra_Kart
+	add constraint FK_ID_Compra_Kart
 		foreign key (ID_Carrito)
 		references Carrito (ID_Carrito),
-	add constraint PK_ID_Compra_Nota
+	add constraint FK_ID_Compra_Nota
 		foreign key (ID_Nota)
 		references OrdenCompra (ID_Nota),
-	add constraint PK_ID_Compra_HPed
+	add constraint FK_ID_Compra_HPed
 		foreign key (ID_HistPed)
 		references HistPedidos (ID_HistPed),
-	add constraint PK_ID_Compra_HVen
+	add constraint FK_ID_Compra_HVen
 		foreign key (ID_HistVentas)
 		references HistVentas (ID_HistVentas),
-	add constraint PK_ID_Compra_Chat
+	add constraint FK_ID_Compra_Chat
 		foreign key (ID_Chat)
 		references Chat (ID_Chat);
 ALTER TABLE Compra ADD INDEX idx_LugarCompra(LugarEntrega);
@@ -381,10 +381,10 @@ CREATE TABLE IF NOT EXISTS HistPedidos(
 alter table HistPedidos
 ADD ID_Nota 	smallint unsigned 	NOT NULL,
 ADD ID_Compra 	smallint unsigned 	NOT NULL,
-	add constraint PK_ID_HPed_Nota
+	add constraint FK_ID_HPed_Nota
 		foreign key (ID_Nota)
 		references OrdenCompra (ID_Nota),
-	add constraint PK_ID_HPed_Compra
+	add constraint FK_ID_HPed_Compra
 		foreign key (ID_Compra)
 		references Compra (ID_Compra);
 ALTER TABLE HistPedidos ADD INDEX idx_FechaPed(FechaNom);
@@ -421,10 +421,10 @@ CREATE TABLE IF NOT EXISTS VentasResumen(
 alter table VentasResumen
 ADD ID_HistVentas 	smallint unsigned 	NOT NULL,
 ADD ID_Compra 	smallint unsigned 	NOT NULL,
-	add constraint PK_ID_VenR_HVen
+	add constraint FK_ID_VenR_HVen
 		foreign key (ID_HistVentas)
 		references HistVentas (ID_HistVentas),
-	add constraint PK_ID_VenR_Compra
+	add constraint FK_ID_VenR_Compra
 		foreign key (ID_Compra)
 		references Compra (ID_Compra);
 ALTER TABLE VentasResumen ADD INDEX idx_TotalVentas(VentasTotales);
